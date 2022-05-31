@@ -12,7 +12,7 @@ nav_order: 2
 
 - **2020**, *Teaching Assistant for Deep Learning (2AMM10) at TU/e*,  ([Tutorials and Practicals](https://github.com/luuyin/TU-e-deeplearning-2020) )
 
-    I am responsible for Grading, Practical :
+    I am responsible for grading, courses for practical, and developing the following material:
 
     <ul>
       <li>   <a href="https://github.com/luuyin/TU-e-deeplearning-2020/blob/main/04-Spatial-data/Practical%204a.0%20(CNN%20Cifar-10)%20.ipynb">Practical 4a.0, Build CNN for CIFAR-10</a>, <a href="https://github.com/luuyin/TU-e-deeplearning-2020/blob/main/04-Spatial-data/answers/Practical%204a.0%20(CNN%20Cifar-10)%20-%20answers.ipynb">Answer</a></li>
@@ -43,7 +43,7 @@ nav_order: 2
 
 - **2021**, *Teaching Assistant for Deep Learning (2AMM10) at TU/e, 2021*,  ([Tutorials and Practicals](https://github.com/luuyin/TU-e-deeplearning-2021) )
 
-    I am responsible for Grading, and develop:
+    I am responsible for grading, courses for practical, and developing the following material:
 
     <ul>
     <li>   <a href="https://github.com/luuyin/TU-e-deeplearning-2021/blob/main/tutorials/P0_Pytorch_tutorial.ipynb">Tutorial P0, Pytorch Basic </a></li>
@@ -68,7 +68,7 @@ nav_order: 2
 - **2022**, *Teaching Assistant for Deep Learning (2AMM10) at TU/e, 2022*,  ([Tutorials and Practicals](https://github.com/luuyin/TU-e-deeplearning-2022) )
 
 
-    I am responsible for Grading, and develop:
+    I am responsible for grading, courses for practical, and developing the following material:
 
     <ul>
 

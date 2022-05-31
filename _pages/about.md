@@ -20,7 +20,7 @@ Hi!  I am Lu, currently  a Ph.D. candidate of machine learning in the data minin
 
 Before I moved to the Netherlands, I obtained my master degree at Harbin Institute of Technology (Shenzhen). 
 
-My research interests include sparse training, data efficiency, knowledge elicitation.
+My research interests include sparse training, data efficiency, and knowledge elicitation.
 
 
 
