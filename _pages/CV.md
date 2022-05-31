@@ -260,6 +260,9 @@ nav_order: 2
         font-weight: 500;
         }
 
+        .details h4{
+        font-size: 10pt; 
+        }
         .main-block:not(.concise) .details div{
         margin: 0.18in 0 0.1in 0; 
         }
@@ -412,7 +415,7 @@ nav_order: 2
   </head>
   <body lang="en">
     <section id="main">
-    
+
       <section class="main-block concise">
         <h2>
           <i class="fa fa-graduation-cap"></i> Education
@@ -466,7 +469,7 @@ nav_order: 2
           </div>
           <div class="details">
             <header>
-              <h3>B.Eng in Electrical Engineering and Automation</h3>
+              <h3>B.Eng Scholarship Four-years Ph. D. founding, Chinese Scholarship Council</h3>
               <span class="place">Harbin Institute of Technology</span>
               <span class="location">China</span>
             </header>
@@ -474,10 +477,78 @@ nav_order: 2
             </div>
           </div>
         </section>
-
-        
       </section>
 
+
+      <section class="main-block concise">
+        <h2>
+          <i class='fas fa-award fa-lg'></i> AWARDS AND HONOURS
+        </h2>
+
+        <section class="blocks">
+          <div class="date">
+            <span>09.2009</span>
+          </div>
+          <div class="decorator">
+          </div>
+          <div class="details">
+            <header>
+              <h4>Scholarship Four-years Ph. D. founding, Chinese Scholarship Council</h4>
+            </header>
+
+          </div>
+        </section>
+  
+
+        <section class="blocks">
+          <div class="date">
+            <span>09.2009</span>
+          </div>
+          <div class="decorator">
+          </div>
+          <div class="details">
+            <header>
+              <h4>Scholarship Four-years Ph. D. founding, Chinese Scholarship Council</h4>
+            </header>
+
+          </div>
+        </section>
+
+
+        <section class="blocks">
+          <div class="date">
+            <span>09.2009</span>
+          </div>
+          <div class="decorator">
+          </div>
+          <div class="details">
+            <header>
+              <h4>Scholarship Four-years Ph. D. founding, Chinese Scholarship Council</h4>
+            </header>
+
+          </div>
+        </section>
+
+
+        <section class="blocks">
+          <div class="date">
+            <span>09.2009</span>
+          </div>
+          <div class="decorator">
+          </div>
+          <div class="details">
+            <header>
+              <h4>Scholarship Four-years Ph. D. founding, Chinese Scholarship Council</h4>
+            </header>
+
+          </div>
+        </section>
+
+
+
+      </section>
+
+      
 
       <section class="main-block">
         <h2>
@@ -608,71 +679,7 @@ nav_order: 2
       </section>
 
       
-      <section class="main-block concise">
-        <h2>
-          <i class="fa fa-graduation-cap"></i> Education
-        </h2>
-        <section class="blocks">
-          <div class="date">
-            <span>10.2018</span><span>Present</span>
-          </div>
-          <div class="decorator">
-          </div>
-          <div class="details">
-            <header>
-              <h3>Ph.D. in Computer Science.</h3>
-              <span class="place">Eindhoven University of Technology</span>
-              <span class="location">Eindhoven, Netherlands</span>
-            </header>
-            <div>Department: Mathematics and Computer Science
-            <br> Specialization: Sparse Training, Knowledge Elicitation and Presentation, MetricLearning, Few-shot learning, Active Learning
-            <br> Promotors: Prof. Dr. Mykola Pechenizkiy; Dr. Vlado Menkovski
-            </div>
-          </div>
-        </section>
 
-
-        <section class="blocks">
-          <div class="date">
-            <span>09.2015</span><span>07.2018</span>
-          </div>
-          <div class="decorator">
-          </div>
-          <div class="details">
-            <header>
-              <h3>M.Eng C. in Control Engineering.</h3>
-              <span class="place">Harbin Institute of Technology Shenzhen GraduateSchool</span>
-              <span class="location">Shenzhen, China</span>
-            </header>
-            <div>Department: Mechanical Engineering and Automation
-            <br> Specialization: Control Engineering, Robotics
-            <br> Promotors: Prof. Dr. Xiaorui Zhu
-            </div>
-          </div>
-        </section>
-
-
-
-        <section class="blocks">
-          <div class="date">
-            <span>09.2009</span><span>07.2013</span>
-          </div>
-          <div class="decorator">
-          </div>
-          <div class="details">
-            <header>
-              <h3>B.Eng in Electrical Engineering and Automation</h3>
-              <span class="place">Harbin Institute of Technology</span>
-              <span class="location">China</span>
-            </header>
-            <div>Department: nformation and Electrical Engineering
-            </div>
-          </div>
-        </section>
-
-        
-      </section>
-    </section>
 
 
 
