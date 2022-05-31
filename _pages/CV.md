@@ -24,9 +24,9 @@ nav_order: 2
         }
 
         :root{
-        --page-height: 20in;
+        --page-height: 25in;
 
-        --main-width: 9in;
+        --main-width: 7in;
         --sidebar-width: calc(var(--page-width) - var(--main-width));
         --decorator-horizontal-margin: 0.2in;
 
@@ -256,7 +256,7 @@ nav_order: 2
         }
 
         .details h3{
-        font-size: 13pt; 
+        font-size: 12pt; 
         font-weight: 500;
         }
 
@@ -487,7 +487,7 @@ nav_order: 2
 
         <section class="blocks">
           <div class="date">
-            <span>09.2009</span>
+            <span>10.2018</span>
           </div>
           <div class="decorator">
           </div>
@@ -502,49 +502,59 @@ nav_order: 2
 
         <section class="blocks">
           <div class="date">
-            <span>09.2009</span>
+            <span>07.2016</span>
           </div>
           <div class="decorator">
           </div>
           <div class="details">
             <header>
-              <h4>Scholarship Four-years Ph. D. founding, Chinese Scholarship Council</h4>
+              <h4>Scholarship Second-class Scholarship, Harbin Institute of Technology</h4>
             </header>
 
           </div>
         </section>
+    
+        <section class="blocks">
+          <div class="date">
+            <span>07.2015</span>
+          </div>
+          <div class="decorator">
+          </div>
+          <div class="details">
+            <header>
+              <h4>Scholarship Second-class Scholarship, Harbin Institute of Technology</h4>
+            </header>
 
+          </div>
+        </section>
 
         <section class="blocks">
           <div class="date">
-            <span>09.2009</span>
+            <span>09.2015</span>
           </div>
           <div class="decorator">
           </div>
           <div class="details">
             <header>
-              <h4>Scholarship Four-years Ph. D. founding, Chinese Scholarship Council</h4>
+              <h4>Excellent Student Leader, Harbin Institute of Technology</h4>
             </header>
 
           </div>
         </section>
-
 
         <section class="blocks">
           <div class="date">
-            <span>09.2009</span>
+            <span>09.2012</span>
           </div>
           <div class="decorator">
           </div>
           <div class="details">
             <header>
-              <h4>Scholarship Four-years Ph. D. founding, Chinese Scholarship Council</h4>
+              <h4>Excellent innovation ability certification, Beijing Jiaotong University</h4>
             </header>
 
           </div>
         </section>
-
-
 
       </section>
 
@@ -678,10 +688,4 @@ nav_order: 2
         </section>
       </section>
 
-      
-
-
-
-
-  </body>
-</html>
+</body> 
