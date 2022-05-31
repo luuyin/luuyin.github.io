@@ -10,7 +10,7 @@ nav_order: 2
 ---
 <!-- _pages/publications.md -->
 
-### *Sparse Trainig*
+### *Sparse Training*
 <div class="publications">
 
 
@@ -23,7 +23,7 @@ nav_order: 2
 </div>
 
 <br>
-### *Data Efficiently*
+### *Data Efficiency and Knowledge Elicitation*
 
 <div class="publications">
 {%- for y in page.years_2 %}
