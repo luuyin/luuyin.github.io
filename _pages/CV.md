@@ -58,7 +58,6 @@ nav_order: 2
 
         h1, h2, h3{
         margin: 0;
-        color: #000;
         }
 
         li{
@@ -142,7 +141,7 @@ nav_order: 2
         position: relative;
         top: calc(-1 * var(--row-blocks-padding-top));
         /* XXX: 0.5px for aligning fx printing */
-        left: calc(-1 * var(--decorator-horizontal-margin));
+        left: calc(-0.46 * var(--decorator-horizontal-margin));
         display: block;
         border-left: var(--decorator-border);
         z-index: 0;
@@ -154,11 +153,11 @@ nav_order: 2
         /**** minor tweaks on the icon fonts ****/
         #main h2 > .fa-graduation-cap{
         left: calc(var(--main-blocks-title-icon-offset-left) - 2pt);
-        top: 2pt;
+        top: -1pt;
         }
 
         #main h2 > .fa-suitcase{
-        top: 1pt;
+        top: -1pt;
         }
 
         #main h2 > .fa-folder-open{
@@ -393,26 +392,10 @@ nav_order: 2
 
 
 
-     </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     
+     </style>    
   </head>
+
+
   <body lang="en">
     <section id="main">
 
@@ -469,7 +452,7 @@ nav_order: 2
           </div>
           <div class="details">
             <header>
-              <h3>B.Eng Scholarship Four-years Ph. D. founding, Chinese Scholarship Council</h3>
+              <h3>B.Eng in Electrical Engineering and Automation</h3>
               <span class="place">Harbin Institute of Technology</span>
               <span class="location">China</span>
             </header>
@@ -493,7 +476,7 @@ nav_order: 2
           </div>
           <div class="details">
             <header>
-              <h4>Scholarship Four-years Ph. D. founding, Chinese Scholarship Council</h4>
+              <h4>Four-years Ph. D. founding, Chinese Scholarship Council</h4>
             </header>
 
           </div>
@@ -508,7 +491,7 @@ nav_order: 2
           </div>
           <div class="details">
             <header>
-              <h4>Scholarship Second-class Scholarship, Harbin Institute of Technology</h4>
+              <h4>Second-class Scholarship, Harbin Institute of Technology</h4>
             </header>
 
           </div>
@@ -522,7 +505,7 @@ nav_order: 2
           </div>
           <div class="details">
             <header>
-              <h4>Scholarship Second-class Scholarship, Harbin Institute of Technology</h4>
+              <h4>Second-class Scholarship, Harbin Institute of Technology</h4>
             </header>
 
           </div>
@@ -562,130 +545,87 @@ nav_order: 2
 
       <section class="main-block">
         <h2>
-          <i class="fa fa-suitcase"></i> Experiences
+          <i class="fa fa-suitcase"></i> Work Experiences
         </h2>
+
         <section class="blocks">
           <div class="date">
-            <span>2015</span><span>present</span>
+            <span>04.2020</span><span>06.2022</span>
           </div>
           <div class="decorator">
           </div>
           <div class="details">
             <header>
-              <h3>Some Position</h3>
-              <span class="place">Some Workplace</span>
-              <span class="location">(remote)</span>
+              <h3>Teaching Assistant of Deep Learning Course</h3>
+              <span class="place">Eindhoven University of Technology</span>
+              <span class="location">(Netherlands)</span>
             </header>
             <div>
               <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio eros, placerat eu metus id, gravida eleifend odio. Vestibulum dapibus pharetra odio, egestas ullamcorper ipsum congue ac. Maecenas viverra tortor eget convallis vestibulum. Donec pulvinar venenatis est, non sollicitudin metus laoreet sed. Fusce tincidunt felis nec neque aliquet porttitor</li>
+                <li>Develop the tutorials and prctical   <a href="/teaching/">materials</a></li>
+
+                <li>Develop and grade the assignments</li>
+                <li>Record the video lectures for more than 200 students</li>
               </ul>
               </div>
           </div>
         </section>
-        <section class="blocks">
+
+         <section class="blocks">
           <div class="date">
-            <span>2014</span><span>2015</span>
+            <span>08.2016</span><span>01.2017</span>
           </div>
           <div class="decorator">
           </div>
           <div class="details">
             <header>
-              <h3>Another Position</h3>
-              <span class="place">Some Workplace</span>
-              <span class="location">Some City, Some Country</span>
+              <h3>Teaching Assistant of Deep Learning Course</h3>
+              <span class="place">Harbin Institute of Technology Shenzhen Graduate School">Shenzhen, China</span>
             </header>
             <div>
               <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <section class="blocks">
-          <div class="date">
-            <span>2013</span><span>2014</span>
-          </div>
-          <div class="decorator">
-          </div>
-          <div class="details">
-            <header>
-              <h3>Yet Another Job Position</h3>
-              <span class="place">Some Workplace</span>
-              <span class="location">Some City, Some Country</span>
-            </header>
-            <div>
-              <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio eros, placerat eu metus id, gravida eleifend odio</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                <li>Prepare lecture slides for Forward propagation and CNN model</a></li>
+                <li>Grade the assignments</li>
               </ul>
               </div>
           </div>
         </section>
+
+
+        
+         <section class="blocks">
+          <div class="date">
+            <span>08.2016</span><span>01.2017</span>
+          </div>
+          <div class="decorator">
+          </div>
+          <div class="details">
+            <header>
+              <h3>Embedded Systems Engineer</h3>
+              <span class="place">DaDao Intelligence & Innovation Technology Co., Ltd">Shenzhen, China</span>
+            </header>
+            <div>
+              <ul>
+                <li>Controlling the speed and direction of a patrol robot by STM32</li>
+              </ul>
+              </div>
+          </div>
+        </section>
+
+
+
       </section>
       <section class="main-block">
         <h2>
-          <i class="fa fa-folder-open"></i> Selected Projects
+          <i class="fa fa-folder-open"></i> RESEARCH ACTIVITIES & PUBLICATION & OHTERS
         </h2>
-        <section class="blocks">
-          <div class="date">
-            <span>2015</span><span>2016</span>
-          </div>
-          <div class="decorator">
-          </div>
-          <div class="details">
-            <header>
-              <h3>Some Project 1</h3>
-              <span class="place">Some workplace</span>
-            </header>
-            <div>n Forty-Two Discover
-              <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio eros, placerat eu metus id, gravida eleifend odio. Vestibulum dapibus pharetra odio, egestas ullamcorper ipsum congue ac</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio eros, placerat eu metus id, gravida eleifend odio</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <section class="blocks">
-          <div class="date">
-            <span>2014</span><span>2015</span>
-          </div>
-          <div class="decorator">
-          </div>
-          <div class="details">
-            <header>
-              <h3>Some Project 2</h3>
-              <span class="place">Some workplace</span>
-            </header>
-            <div>
-              <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio eros, placerat eu metus id, gravida eleifend odio. Vestibulum dapibus pharetra odio, egestas ullamcorper ipsum congue ac. Maecenas viverra tortor eget convallis vestibulum. Donec pulvinar venenatis est, non sollicitudin metus laoreet sed. Fusce tincidunt felis nec neque aliquet porttitor</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <section class="blocks">
-          <div class="date">
-            <span>2014</span>
-          </div>
-          <div class="decorator">
-          </div>
-          <div class="details">
-            <header>
-              <h3>Some Project 3</h3>
-              <span class="place">Some workplace</span>
-            </header>
-            <div>
-              <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio eros, placerat eu metus id, gravida eleifend odio</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-      </section>
 
-</body> 
+        <section class="blocks">
+
+            <div>Please see my full CV, google scholar, publication page.
+
+            </div>
+ 
+        </section>
+
+   
