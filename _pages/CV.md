@@ -618,7 +618,7 @@ nav_order: 2
       </section>
       <section class="main-block">
         <h2>
-          <i class="fa fa-folder-open"></i> RESEARCH ACTIVITIES & PUBLICATION & OHTERS
+          <i class="fa fa-folder-open"></i> RESEARCH ACTIVITIES & PUBLICATIONS & OHTERS
         </h2>
 
 
