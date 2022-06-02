@@ -584,7 +584,7 @@ nav_order: 2
             </header>
             <div>
               <ul>
-                <li>Prepare lecture slides for Forward propagation and CNN model</a></li>
+                <li>Prepare lecture slides for Forward propagation and CNN model</li>
                 <li>Grade the assignments</li>
               </ul>
               </div>
