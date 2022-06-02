@@ -24,7 +24,7 @@ nav_order: 2
         }
 
         :root{
-        --page-height: 25in;
+        --page-height: 16in;
 
         --main-width: 7in;
         --sidebar-width: calc(var(--page-width) - var(--main-width));
@@ -126,6 +126,7 @@ nav_order: 2
         font-weight: 400;
         font-size: 14pt;
         color: #555;
+        line-height: 2;
         }
 
         #main h2 > i{
@@ -136,6 +137,7 @@ nav_order: 2
         left: var(--main-blocks-title-icon-offset-left);
         z-index: 1; /* over decorator line */
         color: #444;
+        line-height: 2;
         }
 
 
@@ -268,6 +270,9 @@ nav_order: 2
         .details .place{ 
         float: left;
         font-size: 11pt;
+        font-weight: 350;
+        font-style:italic
+        
         }
 
         .details .location{
