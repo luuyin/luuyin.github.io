@@ -154,6 +154,11 @@ nav_order: 2
         #main h2 > .fa-folder-open{
         top: 1.5pt;
         }
+        
+
+             
+        #main h2 > .fa-award{
+        top: -3pt;}
 
         /**** individual row blocks (date - decorator - details) ****/
 
