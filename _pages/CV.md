@@ -114,9 +114,11 @@ nav_order: 2
 
         .main-block{
         margin-top: 0.1in;
+        
         }
 
         #main h2{
+        margin-bottom: 0.1in;
         position: relative;
         top: var(--row-blocks-padding-top);
         /* XXX: 0.5px for aligning fx printing */
@@ -136,19 +138,6 @@ nav_order: 2
         color: #444;
         }
 
-        #main h2::after{ /* extends the decorator line */
-        height: calc(var(--row-blocks-padding-top) * 2);
-        position: relative;
-        top: calc(-1 * var(--row-blocks-padding-top));
-        /* XXX: 0.5px for aligning fx printing */
-        left: calc(-0.46 * var(--decorator-horizontal-margin));
-        display: block;
-        border-left: var(--decorator-border);
-        z-index: 0;
-        line-height: 0;
-        font-size: 0;
-        content: ' ';
-        }
 
         /**** minor tweaks on the icon fonts ****/
         #main h2 > .fa-graduation-cap{
@@ -558,11 +547,11 @@ nav_order: 2
             <header>
               <h3>Teaching Assistant of Deep Learning Course</h3>
               <span class="place">Eindhoven University of Technology</span>
-              <span class="location">(Netherlands)</span>
+              <span class="location">Netherlands</span>
             </header>
             <div>
               <ul>
-                <li>Develop the tutorials and prctical   <a href="/teaching/">materials</a></li>
+                <li>Develop the tutorials and prctical materials  <a href="/teaching/">(Link)</a></li>
 
                 <li>Develop and grade the assignments</li>
                 <li>Record the video lectures for more than 200 students</li>
@@ -580,7 +569,8 @@ nav_order: 2
           <div class="details">
             <header>
               <h3>Teaching Assistant of Deep Learning Course</h3>
-              <span class="place">Harbin Institute of Technology Shenzhen Graduate School">Shenzhen, China</span>
+              <span class="place">Harbin Institute of Technology Shenzhen Graduate School</span>
+              <span class="location">Shenzhen,China</span>
             </header>
             <div>
               <ul>
@@ -602,7 +592,8 @@ nav_order: 2
           <div class="details">
             <header>
               <h3>Embedded Systems Engineer</h3>
-              <span class="place">DaDao Intelligence & Innovation Technology Co., Ltd">Shenzhen, China</span>
+              <span class="place">DaDao Intelligence & Innovation Technology Co., Ltd</span>
+              <span class="location">Shenzhen,China</span>
             </header>
             <div>
               <ul>
@@ -620,11 +611,26 @@ nav_order: 2
           <i class="fa fa-folder-open"></i> RESEARCH ACTIVITIES & PUBLICATION & OHTERS
         </h2>
 
-        <section class="blocks">
 
-            <div>Please see my full CV, google scholar, publication page.
+         <section class="blocks">
+          <div class="date">
+          <span>      </span>
+      
+          </div>
+          <div class="decorator">
+          </div>
+          <div class="details">
+            <header>
+                      
+            <h4>Please see my  <a href="/assets/pdf/CV-Ph.D.pdf">full CV</a> , <a href="https://scholar.google.com/citations?user=G4Xe1NkAAAAJ">google scholar</a> and <a href="/publications/">publication page</a></h4>
+          
+            </header>
 
-            </div>
+          </div>
+        </section>
+
+
+
  
         </section>
 
