@@ -298,7 +298,7 @@ nav_order: 2
         font-weight: normal;
         font-style: normal;
         text-decoration: inherit;
-        content: "\f041";
+        content: " ";
         }
 
         /***** fine-tunes on the lists... *****/
@@ -412,10 +412,10 @@ nav_order: 2
             <header>
               <h3>Ph.D. in Computer Science.</h3>
               <span class="place">Eindhoven University of Technology</span>
-              <span class="location">Eindhoven, Netherlands</span>
+              <span class="location"><i class='fas fa-map-marker-alt'></i> Eindhoven, Netherlands</span>
             </header>
             <div>Department: Mathematics and Computer Science
-            <br> Specialization: Sparse Training, Knowledge Elicitation and Presentation, MetricLearning, Few-shot learning, Active Learning
+            <br> Specialization: Sparse Training, Knowledge Elicitation and Presentation, Metric Learning, Few-shot learning, Active Learning
             <br> Promotors: Prof. Dr. Mykola Pechenizkiy; Dr. Vlado Menkovski
             </div>
           </div>
@@ -432,7 +432,7 @@ nav_order: 2
             <header>
               <h3>M.Eng C. in Control Engineering.</h3>
               <span class="place">Harbin Institute of Technology Shenzhen GraduateSchool</span>
-              <span class="location">Shenzhen, China</span>
+              <span class="location"><i class='fas fa-map-marker-alt'></i> Shenzhen, China</span>
             </header>
             <div>Department: Mechanical Engineering and Automation
             <br> Specialization: Control Engineering, Robotics
@@ -453,9 +453,9 @@ nav_order: 2
             <header>
               <h3>B.Eng in Electrical Engineering and Automation</h3>
               <span class="place">Harbin Institute of Technology</span>
-              <span class="location">China</span>
+              <span class="location"><i class='fas fa-map-marker-alt'></i> China</span>
             </header>
-            <div>Department: nformation and Electrical Engineering
+            <div>Department: Information and Electrical Engineering
             </div>
           </div>
         </section>
@@ -532,7 +532,7 @@ nav_order: 2
           </div>
           <div class="details">
             <header>
-              <h4>Excellent innovation ability certification, Beijing Jiaotong University</h4>
+              <h4>Excellent Innovation Ability certification, Beijing Jiaotong University</h4>
             </header>
 
           </div>
@@ -557,7 +557,7 @@ nav_order: 2
             <header>
               <h3>Teaching Assistant of Deep Learning Course</h3>
               <span class="place">Eindhoven University of Technology</span>
-              <span class="location">Netherlands</span>
+              <span class="location"><i class='fas fa-map-marker-alt'></i> Netherlands</span>
             </header>
             <div>
               <ul>
@@ -580,7 +580,7 @@ nav_order: 2
             <header>
               <h3>Teaching Assistant of Deep Learning Course</h3>
               <span class="place">Harbin Institute of Technology Shenzhen Graduate School</span>
-              <span class="location">Shenzhen,China</span>
+              <span class="location"><i class='fas fa-map-marker-alt'></i> Shenzhen, China</span>
             </header>
             <div>
               <ul>
@@ -603,7 +603,7 @@ nav_order: 2
             <header>
               <h3>Embedded Systems Engineer</h3>
               <span class="place">DaDao Intelligence & Innovation Technology Co., Ltd</span>
-              <span class="location">Shenzhen,China</span>
+              <span class="location"><i class='fas fa-map-marker-alt'></i> Shenzhen, China</span>
             </header>
             <div>
               <ul>
