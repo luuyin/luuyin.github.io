@@ -561,7 +561,7 @@ nav_order: 2
             </header>
             <div>
               <ul>
-                <li>Develop the tutorials and prctical materials  <a href="/teaching/">(Link)</a></li>
+                <li>Develop the tutorials and practical materials  <a href="/teaching/">(Link)</a></li>
 
                 <li>Develop and grade the assignments</li>
                 <li>Record the video lectures for more than 200 students</li>
