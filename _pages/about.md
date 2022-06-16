@@ -16,12 +16,11 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hi!  I am Lu, currently  a Ph.D. candidate of machine learning in the data mining group at the Eindhoven University of Technology (TU/e), the Netherlands, under the supervision of [Mykola Pechenizkiy](https://www.win.tue.nl/~mpechen/) and [Vlado Menkovski ](https://vlamen.github.io/). 
+Hi!  I am Lu, currently a Ph.D. candidate of machine learning in the data mining group at the Eindhoven University of Technology (TU/e), the Netherlands, under the supervision of [Mykola Pechenizkiy](https://www.win.tue.nl/~mpechen/) and [Vlado Menkovski ](https://vlamen.github.io/). 
 
-Before I moved to the Netherlands, I obtained my master degree at Harbin Institute of Technology (Shenzhen). 
+Before moving to the Netherlands, I obtained my master's and bachelor's degrees at the [Harbin Institute of Technology](https://en.wikipedia.org/wiki/Harbin_Institute_of_Technology). 
 
-My research interests include sparse training, data efficiency, and knowledge elicitation.
-
+My research interests include sparse training, data efficiency, knowledge elicitation and representation.
 
 
 
