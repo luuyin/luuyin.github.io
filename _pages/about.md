@@ -6,7 +6,7 @@ subtitle: <i> l.yin@surrey.ac.uk</i> ;<i> l.yin@tue.nl</i>
 
 profile:
   align: right
-  image: assets/images/prof_pic.jpg
+  image: https://raw.githubusercontent.com/luuyin/luuyin.github.io/main/assets/img/prof_pic.jpg
   # address: >
   #   <p>7.144, MetaForm</p>
   #   <p>5612 AZ, Eindhoven</p>
