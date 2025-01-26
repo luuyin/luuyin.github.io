@@ -6,7 +6,7 @@ subtitle: <i> l.yin@surrey.ac.uk</i> ;<i> l.yin@tue.nl</i>
 
 profile:
   align: right
-  image: 5.jpg
+  image: prof_pic.jpg
   # address: >
   #   <p>7.144, MetaForm</p>
   #   <p>5612 AZ, Eindhoven</p>
