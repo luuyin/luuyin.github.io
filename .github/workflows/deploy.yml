@@ -1,0 +1,54 @@
+name: Deploy Jekyll Site
+
+on:
+  push:
+    branches: [ "master" ]  # 或你要监听的分支，比如 'source', 'master' 等
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+        with:
+          # 如果你想完整保留Git历史，需要：
+          fetch-depth: 0
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2  # 根据你的需求可调整
+
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
+
+      # 跟你的 bin/deploy 类似：先 build，再把 _site 提交到 main 分支
+      - name: Build site
+        run: bundle exec jekyll build
+
+      - name: Deploy to main branch
+        run: |
+          # 如果 main 分支已经存在，会在这里把它检出，如果不存在，会新建。
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # 创建一个临时工作目录，把 _site 复制过去
+          mv _site ../site_build
+
+          # 切到 main 分支（或你想部署的分支名）
+          git checkout -B main
+
+          # 清理当前文件，只保留 .git, .github, CNAME(若有)
+          find . -maxdepth 1 ! -name '.git' ! -name '.github' ! -name 'CNAME' -exec rm -rf {} \;
+
+          # 拷贝构建结果
+          mv ../site_build/* .
+          rm -r ../site_build
+
+          # 提交并推送
+          git add -A
+          git commit -m "Deploy from GitHub Actions $(date +'%Y-%m-%d %H:%M:%S') [ci skip]"
+          git push -f origin main
