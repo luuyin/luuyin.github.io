@@ -1,6 +1,8 @@
-/* 必然有效，直接设置最强优先级 */
-div.news,
-div.news * {
-  font-size: 0.5rem !important; /* 可以设更小 */
+/* 首页上的news列表字体变小，精确匹配你的HTML结构 */
+.news, 
+.news table, 
+.news table th, 
+.news table td {
+  font-size: 0.8rem !important; /* 可进一步调小如0.7rem或0.65rem */
   line-height: 1.4 !important;
 }
