@@ -111,7 +111,7 @@ external_sources:
 collections:
   news:
     defaults:
-      layout: news
+      layout: post
     output: true
     permalink: /news/:path/
   projects:
