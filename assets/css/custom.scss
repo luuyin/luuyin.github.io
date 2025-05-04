@@ -1,8 +1,7 @@
 /* 首页上的news列表字体变小 */
-.news, 
-.news-item,
-.news-item p, 
-.news-item span {
-  font-size: 0.75rem !important; /* 调整为你喜欢的大小 */
-  line-height: 1.4;
+/* 强制首页news字体变小（兼容几乎所有情况） */
+.home .news, 
+.home .news * {
+  font-size: 0.75rem !important; /* 一定生效 */
+  line-height: 1.4 !important;
 }
