@@ -1,33 +1,33 @@
-          
-          <div class="news">
+<div class="news">
+  <h2>News</h2>
 
+  {% if site.news %}
+    {%- assign grouped = site.news | reverse
+                     | group_by_exp: "p", "p.date | date: '%b %Y'" -%}
 
-            <br> 
-            <br> 
-            <br> 
-            <h2>News</h2>
-
-
-
-            {% if site.news != blank -%} 
-            <div class="table-responsive">
-              <table class="table table-sm table-borderless">
-              {%- assign news = site.news | reverse -%} 
-              {% for item in news limit: site.news_limit %} 
-                <tr>
-                  <th scope="row">{{ item.date | date: "%b, %Y" }}</th>
-                  <td>
-                    {% if item.inline -%} 
-                      {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
-                    {%- else -%} 
-                      <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-                    {%- endif %} 
-                  </td>
-                </tr>
-              {%- endfor %} 
-              </table>
-            </div>
-          {%- else -%} 
-            <p>No news so far...</p>
-          {%- endif %} 
+    <div class="timeline">
+      {% for g in grouped %}
+        {% for p in g.items limit: site.news_limit %}
+        <div class="tl-row">
+          <!-- 只有该月第一条显示日期 -->
+          <div class="tl-date">
+            {% if forloop.first %}{{ g.name }}{% endif %}
           </div>
+
+          <div class="tl-content">
+            {% if p.inline %}
+              {{ p.content | remove:'<p>' | remove:'</p>' | emojify }}
+            {% else %}
+              <a class="news-title" href="{{ p.url | relative_url }}">
+                {{ p.title }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No news so far…</p>
+  {% endif %}
+</div>

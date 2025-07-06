@@ -6,5 +6,5 @@ inline: true
 
 
 
-<font color=2698BA><b>[NeurIPS Challenge]</b></font> &#128293; Excited to co-organize NeurIPS 2024  challenge [Edge-Device Large Language Model Competition](https://edge-llms-challenge.github.io/edge-llm-challenge.github.io/). We invite you to join the competition!
+[NeurIPS Challenge] &#128293; Excited to co-organize NeurIPS 2024  challenge [Edge-Device Large Language Model Competition](https://edge-llms-challenge.github.io/edge-llm-challenge.github.io/). We invite you to join the competition!
 
