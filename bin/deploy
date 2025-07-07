@@ -1,115 +1,78 @@
 #!/usr/bin/env bash
+#
+# Deploy the site to GitHub Pages.
+# 默认：在 SRC_BRANCH（master）构建，然后把静态文件强推到 DEPLOY_BRANCH（main）。
 
-# Run this script to deploy the app to Github Pages
-
-# Parse cmd arguments
-
+# ──────────────────────── 参数解析 ────────────────────────
 SRC_BRANCH="master"
 DEPLOY_BRANCH="main"
-
+NO_PUSH=""
 USAGE_MSG="usage: deploy [-h|--help] [-u|--user] [-s|--src SRC_BRANCH] [-d|--deploy DEPLOY_BRANCH] [--verbose] [--no-push]"
 
-while [[ $# > 0 ]]; do
-    key="$1"
-
-    case $key in
-        -h|--help)
-        echo $USAGE_MSG
-        exit 0
-        ;;
-        -u|--user)
-        SRC_BRANCH="source"
-        DEPLOY_BRANCH="master"
-        ;;
-        -s|--src)
-        SRC_BRANCH="$2"
-        shift
-        ;;
-        -d|--deploy)
-        DEPLOY_BRANCH="$2"
-        shift
-        ;;
-        --verbose)
-        set -x
-        ;;
-        --no-push)
-        NO_PUSH="--no-push"
-        ;;
-        *)
-        echo "Option $1 is unknown." >&2
-        echo $USAGE_MSG >&2
-        exit 1
-        ;;
-    esac
-    shift
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -h|--help)   echo "$USAGE_MSG"; exit 0 ;;
+    -u|--user)   SRC_BRANCH="source"; DEPLOY_BRANCH="master" ;;
+    -s|--src)    SRC_BRANCH="$2"; shift ;;
+    -d|--deploy) DEPLOY_BRANCH="$2"; shift ;;
+    --verbose)   set -x ;;
+    --no-push)   NO_PUSH="--no-push" ;;
+    *)           echo "Unknown option $1"; echo "$USAGE_MSG"; exit 1 ;;
+  esac
+  shift
 done
 
-# Exit if any subcommand fails
-set -e
+set -e  # 任何子命令失败时退出
 
 echo "Deploying..."
-echo "Source branch: $SRC_BRANCH"
-echo "Deploy branch: $DEPLOY_BRANCH"
+echo "Source branch:  $SRC_BRANCH"
+echo "Deploy branch:  $DEPLOY_BRANCH"
+read -r -p "Proceed? [y/N] " ans
+[[ $ans =~ ^([yY][eE][sS]|[yY])$ ]] || { echo "Aborted."; exit 1; }
 
-read -r -p "Do you want to proceed? [y/N] " response
-if [[ ! $response =~ ^([yY][eE][sS]|[yY])+$ ]]
-then
-    echo "Aborting."
-    [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
-fi
-
-# Check if there are any uncommitted changes
+# ──────────────────────── 前置检查 ────────────────────────
 if ! git diff-index --quiet HEAD --; then
-    echo "Changes to the following files are uncommitted:"
-    git diff-index --name-only HEAD --
-    echo "Please commit the changes before proceeding."
-    echo "Aborting."
-    [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
+  echo "⛔ 有尚未提交的修改，请先 commit。"; exit 1;
+fi
+if [[ -n "$(git ls-files --exclude-standard --others)" ]]; then
+  echo "⛔ 有未跟踪文件，请先 commit 或 stash："
+  git ls-files --exclude-standard --others; exit 1;
 fi
 
-# Check if there are any untracked files
-if ! test -z "$(git ls-files --exclude-standard --others)"; then
-    echo "There are untracked files:"
-    git ls-files --exclude-standard --others
-    echo "Please commit those files or stash them before proceeding."
-    echo "Aborting."
-    [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
-fi
+# ──────────────────────── 切换到源码分支 ────────────────────────
+git checkout -B "$SRC_BRANCH"
 
-# Switch to source branch (creates it if necessary from the current branch)
-if [ `git branch | grep $SRC_BRANCH | tr ' ' '\n' | tail -1` ]
-then
-    git checkout $SRC_BRANCH
-else
-    git checkout -b $SRC_BRANCH
-fi
+# ──────────────────────── 切到部署分支 ────────────────────────
+git branch -D "$DEPLOY_BRANCH" 2>/dev/null || true
+git checkout -b "$DEPLOY_BRANCH"
 
-# Checkout DEPLOY_BRANCH branch
-if [ `git branch | grep $DEPLOY_BRANCH` ]
-then
-  git branch -D $DEPLOY_BRANCH
-fi
-git checkout -b $DEPLOY_BRANCH
-
-# Export JEKYLL_ENV=production
+# ──────────────────────── 生产构建 ────────────────────────
 export JEKYLL_ENV=production
-
-# Build site
 bundle exec jekyll build
 
-# Delete and move files
-find . -maxdepth 1 ! -name '_site' ! -name '.git' ! -name 'CNAME' ! -name '.gitignore' -exec rm -rf {} \;
+# ──────────────────────── 清理并移动静态文件 ────────────────────────
+# 保留 .git 、CNAME、.gitignore、.nojekyll，其余删除
+find . -maxdepth 1 ! -name '.' \
+                   ! -name '_site' \
+                   ! -name '.git' \
+                   ! -name 'CNAME' \
+                   ! -name '.gitignore' \
+                   ! -name '.nojekyll' \
+                   -exec rm -rf {} +
+
 mv _site/* .
-rm -R _site/
+rm -rf _site/
 
-# Push to DEPLOY_BRANCH
+# 告诉 GitHub Pages “不要再跑 Jekyll”
+touch .nojekyll
+
+# ──────────────────────── 提交并推送 ────────────────────────
 git add -fA
-git commit --allow-empty -m "$(git log -1 --pretty=%B) [ci skip]"
-[[ ${NO_PUSH} ]] || git push -f -q origin $DEPLOY_BRANCH
+git commit --allow-empty -m "$(git log -1 --pretty=%B) [skip ci]" || true
+[[ -z "$NO_PUSH" ]] && git push -f origin "$DEPLOY_BRANCH"
 
-# Move back to SRC_BRANCH
-git checkout $SRC_BRANCH
+# 回到源码分支
+git checkout "$SRC_BRANCH"
 
-echo "Deployed successfully!"
-
+echo "✅  Deploy 完成！"
 exit 0
