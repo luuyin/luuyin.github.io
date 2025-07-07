@@ -1,78 +1,99 @@
 #!/usr/bin/env bash
 #
-# Deploy the site to GitHub Pages.
-# 默认：在 SRC_BRANCH（master）构建，然后把静态文件强推到 DEPLOY_BRANCH（main）。
+# bin/deploy   ―  Build site on SRC_BRANCH (default master) and
+#                 force‑push static files to DEPLOY_BRANCH (default main).
+#                 Requires ImageMagick (convert) installed locally.
 
-# ──────────────────────── 参数解析 ────────────────────────
+###############################################################################
+# 参数解析
+###############################################################################
+
 SRC_BRANCH="master"
 DEPLOY_BRANCH="main"
 NO_PUSH=""
-USAGE_MSG="usage: deploy [-h|--help] [-u|--user] [-s|--src SRC_BRANCH] [-d|--deploy DEPLOY_BRANCH] [--verbose] [--no-push]"
+USAGE="usage: deploy [-h|--help] [-u|--user] [-s|--src SRC_BRANCH] \
+[-d|--deploy DEPLOY_BRANCH] [--verbose] [--no-push]"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    -h|--help)   echo "$USAGE_MSG"; exit 0 ;;
+    -h|--help)   echo "$USAGE"; exit 0 ;;
     -u|--user)   SRC_BRANCH="source"; DEPLOY_BRANCH="master" ;;
     -s|--src)    SRC_BRANCH="$2"; shift ;;
     -d|--deploy) DEPLOY_BRANCH="$2"; shift ;;
     --verbose)   set -x ;;
     --no-push)   NO_PUSH="--no-push" ;;
-    *)           echo "Unknown option $1"; echo "$USAGE_MSG"; exit 1 ;;
+    *)           echo "Unknown option $1"; echo "$USAGE"; exit 1 ;;
   esac
   shift
 done
 
-set -e  # 任何子命令失败时退出
+set -e  # 子命令出错即退出
 
-echo "Deploying..."
-echo "Source branch:  $SRC_BRANCH"
-echo "Deploy branch:  $DEPLOY_BRANCH"
-read -r -p "Proceed? [y/N] " ans
-[[ $ans =~ ^([yY][eE][sS]|[yY])$ ]] || { echo "Aborted."; exit 1; }
+###############################################################################
+# 前置检查
+###############################################################################
 
-# ──────────────────────── 前置检查 ────────────────────────
+# 1) 工作区必须干净
 if ! git diff-index --quiet HEAD --; then
-  echo "⛔ 有尚未提交的修改，请先 commit。"; exit 1;
+  echo "⛔ 尚有未提交修改，请先 commit。"; exit 1
 fi
 if [[ -n "$(git ls-files --exclude-standard --others)" ]]; then
-  echo "⛔ 有未跟踪文件，请先 commit 或 stash："
-  git ls-files --exclude-standard --others; exit 1;
+  echo "⛔ 尚有未跟踪文件，请先 commit 或 stash：" ; \
+  git ls-files --exclude-standard --others ; exit 1
 fi
 
-# ──────────────────────── 切换到源码分支 ────────────────────────
+# 2) 必须安装 ImageMagick（convert）
+if ! command -v convert >/dev/null 2>&1; then
+  echo "⛔ 未检测到 ImageMagick（convert）。请先安装："
+  echo "   sudo apt-get install -y imagemagick webp"
+  exit 1
+fi
+
+###############################################################################
+# 切换分支 & 构建
+###############################################################################
+
+echo "🚀 Deploying：$SRC_BRANCH  →  $DEPLOY_BRANCH"
+
 git checkout -B "$SRC_BRANCH"
 
-# ──────────────────────── 切到部署分支 ────────────────────────
 git branch -D "$DEPLOY_BRANCH" 2>/dev/null || true
 git checkout -b "$DEPLOY_BRANCH"
 
-# ──────────────────────── 生产构建 ────────────────────────
 export JEKYLL_ENV=production
 bundle exec jekyll build
 
-# ──────────────────────── 清理并移动静态文件 ────────────────────────
-# 保留 .git 、CNAME、.gitignore、.nojekyll，其余删除
+###############################################################################
+# 清理旧文件并移动 _site
+###############################################################################
+
 find . -maxdepth 1 ! -name '.' \
                    ! -name '_site' \
                    ! -name '.git' \
                    ! -name 'CNAME' \
                    ! -name '.gitignore' \
+                   ! -name '.gitattributes' \
                    ! -name '.nojekyll' \
                    -exec rm -rf {} +
 
 mv _site/* .
 rm -rf _site/
 
-# 告诉 GitHub Pages “不要再跑 Jekyll”
+# 阻止 GitHub Pages 再跑 Jekyll
 touch .nojekyll
 
-# ──────────────────────── 提交并推送 ────────────────────────
+# 可选：确保 WebP 有正确 MIME
+if [[ ! -f .gitattributes ]]; then
+  echo '*.webp binary' > .gitattributes
+fi
+
+###############################################################################
+# 推送
+###############################################################################
+
 git add -fA
-git commit --allow-empty -m "$(git log -1 --pretty=%B) [skip ci]" || true
+git commit --allow-empty -m "Deploy $(date +'%F %T')" || true
 [[ -z "$NO_PUSH" ]] && git push -f origin "$DEPLOY_BRANCH"
 
-# 回到源码分支
 git checkout "$SRC_BRANCH"
-
 echo "✅  Deploy 完成！"
-exit 0
