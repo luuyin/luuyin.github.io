@@ -23,7 +23,7 @@ members:
 
   - name: Handa Li
     group: PhD Students 
-    avatar: /assets/img/team/Handa Li.png
+    avatar: /assets/img/team/Handa Li.jpg
     intro:  "PhD 2025 -"
     link:   ""
 
