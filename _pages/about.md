@@ -18,7 +18,7 @@ social: true  # includes social icons at the bottom of the page
 
 
 
-Greetings! I'm Lu, an Assistant Professor in the School of Computer Science and Electronic Engineering at the [University of Surrey](https://www.surrey.ac.uk/). I am honored to be a long-term visitor and collaborator with the [Visual Informatics Group (VITA)](https://vita-group.github.io/) at UT Austin, led by [Prof. Atlas Wang](https://www.ece.utexas.edu/people/faculty/atlas-wang). Additionally, I am a long-term visiting researcher at [Eindhoven University of Technology (TU/e)](https://www.tue.nl/en/).
+Greetings! I'm Lu, an Assistant Professor in the School of Computer Science and Electronic Engineering at the [University of Surrey](https://www.surrey.ac.uk/). I am honored to be a long-term visitor and collaborator with the [Visual Informatics Group (VITA)](https://vita-group.github.io/) at UT Austin, led by [Prof. Atlas Wang](https://www.ece.utexas.edu/people/faculty/atlas-wang). Additionally, I am a long-term visiting researcher at [Eindhoven University of Technology (TU/e)](https://www.tue.nl/en/).  I lead the Lightweight & Universal Machine Intelligence (LUMI) lab.
 
 
 

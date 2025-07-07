@@ -1,7 +1,7 @@
 ---
 layout: page
-title:  "Teams"
-nav_title: "Teams"
+title:  "LUMI Lab"
+nav_title: "LUMI Lab"
 nav_order: 3
 nav: true
 permalink: /teams/
