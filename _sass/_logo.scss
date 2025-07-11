@@ -1,0 +1,25 @@
+/* 在 navigation 中给 “/teams/” 这个链接追加一个图标 */
+.navbar-nav .nav-item a[href="/teams/"]::after {
+  content: "";
+  display: inline-block;
+  width: 15px;           /* 根据需要调大小 */
+  height: 15px;
+  margin-left: 2px;
+  background: url("/assets/img/lumi_logo.png") no-repeat center/contain;
+}
+
+
+// /* ① 让链接变成行内 flex 盒，项目自然垂直居中 */
+// .navbar-nav .nav-item a[href="/teams/"] {
+//   display: inline-flex;          /* 替代默认 inline-block */
+//   align-items: center;           /* 垂直居中文字 + 图标 */
+// }
+
+// /* ② 调整伪元素尺寸 / 间距 */
+// .navbar-nav .nav-item a[href="/teams/"]::after {
+//   content: "";
+//   width: 18px;                   /* 你 logo 的实际直径 */
+//   height: 18px;
+//   margin-left: 6px;              /* 图标与文字的间距 */
+//   background: url("/assets/img/lumi_logo.svg") no-repeat center/contain;
+// }
