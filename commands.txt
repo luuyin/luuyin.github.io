@@ -1,0 +1,11 @@
+push
+git push -f origin master:gh-pages 
+
+pull
+
+
+local
+bundle exec jekyll serve
+
+deploy
+bin/deploy

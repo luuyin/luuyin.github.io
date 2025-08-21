@@ -1,0 +1,50 @@
+/* ===== Timeline (News) — 无圆点版本 ===================================== */
+:root {
+  --tl-date-width: 5rem;    /* 日期栏宽度 */
+  --tl-gap:        2.2rem;    /* 日期列与内容列之间水平空隙 */
+  --tl-line:       #d0d7de; /* 中间竖线颜色 */
+}
+
+/* ===== 布局主体 ===== */
+.timeline {
+  display: grid;
+  grid-template-columns: var(--tl-date-width) 1fr;
+  column-gap: var(--tl-gap);
+  row-gap: 1.25rem;
+  position: relative;
+  margin: 2rem 0;
+}
+
+/* 竖线 */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--tl-date-width) + var(--tl-gap) / 2);
+  width: 1px;
+  background: var(--tl-line);
+}
+
+/* 每条新闻行 */
+.tl-row { display: contents; }
+
+/* 日期列 */
+.tl-date {
+  font-size: 0.9rem;        /* 稍小于正文 */
+  line-height: 1.4;
+  font-weight: 400;
+  color: #444;
+  text-align: left;
+}
+
+/* 内容列 */
+.tl-content {
+  line-height: 1.45;
+}
+
+/* 链接颜色可保持默认主题色；如需自定义在这里改 */
+.news-title {
+  text-decoration: none;
+}
+.news-title:hover { text-decoration: underline; }

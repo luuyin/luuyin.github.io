@@ -1,0 +1,40 @@
+.team-avatar{
+  width:140px;height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow:0 0 0 2px #e5e5e5;
+  transition:transform .25s;
+}
+.team-avatar:hover{transform:scale(1.05);}
+
+
+/* ==== custom button color only for Teams page ========================== */
+.team-btn {
+  color: #00695c;               /* 深绿（文字+边框）*/
+  border-color: #00695c;
+  transition: background .25s;
+
+  &:hover {
+    background: #00695c;        /* 悬停实心 */
+    color: #fff;
+  }
+}
+.team-avatar{
+  width:140px;height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow:0 0 0 2px #e5e5e5;
+  transition:transform .25s;
+}
+.team-avatar:hover{transform:scale(1.05);}
+
+/* 自定义按钮颜色 */
+.team-btn{
+  color:#00695c;
+  border-color:#00695c;
+  transition:background .25s;
+}
+.team-btn:hover{
+  background:#00695c;
+  color:#fff;
+}
