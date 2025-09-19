@@ -84,6 +84,6 @@
 }
 
 /* —— 可选：按会议设置不同主色 —— */
-.badge[data-conf="neurips"], .badge--fill[data-conf="neurips"], .badge-flag[data-conf="neurips"] { --c: 21,153,87; }  /* 绿 */
-.badge[data-conf="icml"],   .badge--fill[data-conf="icml"],   .badge-flag[data-conf="icml"]   { --c: 237,157,9; }   /* 橙 */
-.badge[data-conf="iclr"],   .badge--fill[data-conf="iclr"],   .badge-flag[data-conf="iclr"]   { --c: 13,148,136; }   /* 蓝 */
+.badge[data-conf="neurips"], .badge--fill[data-conf="neurips"], .badge-flag[data-conf="neurips"] { --c: 21,153,87; }  /* 绿色 */
+.badge[data-conf="icml"],   .badge--fill[data-conf="icml"],   .badge-flag[data-conf="icml"]   { --c: 237,157,9; }     /* 橙色 */
+.badge[data-conf="iclr"],   .badge--fill[data-conf="iclr"],   .badge-flag[data-conf="iclr"]   { --c: 19,138,78 }   /* 蓝 */
