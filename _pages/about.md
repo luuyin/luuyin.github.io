@@ -28,9 +28,9 @@ Previously, I served as a Postdoctoral Fellow at [TU/e](https://www.tue.nl/en/) 
 
 
 My research interests include:
-- <font color="009f06">#AI Efficiency</font>
-- <font color="009f06">#AI for Science</font>
-- <font color="009f06">#Large Language Models</font>
+- <font color="009f06">Efficient and Scalable Foundation Models</font>
+- <font color="009f06">Understanding and Enhancing LLMs</font>
+- <font color="009f06">Interdisciplinary AI Applications</font>
 
 
 

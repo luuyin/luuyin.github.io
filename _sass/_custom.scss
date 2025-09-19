@@ -1,0 +1,89 @@
+/* === Custom: paper labels & links === */
+:root { --accent: var(--global-theme-color, #159957); }
+
+/* 论文标题链接：柔和下划线（可选） */
+.paper-link{
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: .12em;
+  text-underline-offset: .18em;
+  text-decoration-color: rgba(21,153,87,.35);
+}
+.paper-link:hover{ text-decoration-color: var(--accent); }
+
+/* —— 三种 badge 任选其一使用 —— */
+.badge, .badge--fill, .badge-flag { --c: 21,153,87; }  /* 默认主色，RGB 数值 */
+
+/* 通用：跟正文的间距与对齐 */
+.badge, .badge--fill, .badge-flag { margin-right:.45rem; vertical-align:baseline; }
+
+/* 方案 1｜现代渐变描边 + 微阴影（推荐） */
+.badge{
+  display:inline-flex; align-items:center; gap:.45em;
+  padding:.26rem .72rem .28rem; border-radius:999px;
+  font-weight:650; font-size:.9em; letter-spacing:.2px; line-height:1;
+  color: rgb(var(--c));
+  background:
+    linear-gradient(#fff,#fff) padding-box,
+    linear-gradient(135deg, rgba(var(--c),.55), rgba(var(--c),.18)) border-box;
+  border:1px solid transparent;
+  box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 6px 16px rgba(var(--c),.12);
+  transition: transform .12s ease, box-shadow .12s ease, background-color .12s ease;
+}
+.badge::before{
+  content:""; width:.5em; height:.5em; border-radius:50%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.9) 0 45%, transparent 46% 100%),
+    rgb(var(--c));
+  box-shadow: 0 0 0 3px rgba(var(--c),.14);
+}
+.badge:hover{ transform: translateY(-1px); box-shadow: 0 2px 10px rgba(var(--c),.22), 0 1px 2px rgba(0,0,0,.06); }
+@media (prefers-color-scheme: dark){
+  .badge{
+    color: #9be7c4;
+    background:
+      linear-gradient(#0f1114,#0f1114) padding-box,
+      linear-gradient(135deg, rgba(var(--c),.55), rgba(var(--c),.25)) border-box;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.04) inset, 0 4px 14px rgba(0,0,0,.35);
+  }
+  .badge::before{ box-shadow: 0 0 0 3px rgba(var(--c),.22); }
+}
+
+/* 方案 2｜实心柔光胶囊 */
+.badge--fill{
+  display:inline-flex; align-items:center; gap:.45em;
+  padding:.26rem .72rem .28rem; border-radius:999px;
+  font-weight:650; font-size:.9em; letter-spacing:.2px; line-height:1;
+  color:#0b3d2c;
+  background: linear-gradient(180deg, rgba(var(--c),.16), rgba(var(--c),.10));
+  border:1px solid rgba(var(--c),.28);
+  box-shadow: 0 2px 8px rgba(var(--c),.14) inset, 0 1px 2px rgba(0,0,0,.06);
+}
+.badge--fill::before{
+  content:""; width:.5em; height:.5em; border-radius:50%;
+  background: rgb(var(--c));
+  box-shadow: 0 0 0 3px rgba(var(--c),.18);
+}
+
+/* 方案 3｜旗标式条形强调（极简） */
+.badge-flag{
+  position:relative; display:inline-block;
+  padding:.2rem .6rem .22rem .9rem;
+  border-radius:10px; font-weight:600; font-size:.9em;
+  border:1px solid rgba(var(--c),.28);
+  background:#fff; color:#1e293b;
+  box-shadow: 0 1px 2px rgba(0,0,0,.06);
+}
+.badge-flag::before{
+  content:""; position:absolute; left:.35rem; top:50%; transform:translateY(-50%);
+  width:.42rem; height:1.05em; border-radius:2px;
+  background: linear-gradient(180deg, rgba(var(--c),.9), rgba(var(--c),.55));
+}
+@media (prefers-color-scheme: dark){
+  .badge-flag{ background:#0f1114; color:#e6edf3; }
+}
+
+/* —— 可选：按会议设置不同主色 —— */
+.badge[data-conf="neurips"], .badge--fill[data-conf="neurips"], .badge-flag[data-conf="neurips"] { --c: 21,153,87; }  /* 绿 */
+.badge[data-conf="icml"],   .badge--fill[data-conf="icml"],   .badge-flag[data-conf="icml"]   { --c: 237,157,9; }   /* 橙 */
+.badge[data-conf="iclr"],   .badge--fill[data-conf="iclr"],   .badge-flag[data-conf="iclr"]   { --c: 13,148,136; }   /* 蓝 */
