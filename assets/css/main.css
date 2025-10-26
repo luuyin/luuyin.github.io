@@ -1,0 +1,1166 @@
+@charset "UTF-8";
+/*******************************************************************************
+ * Variables used throughout the theme.
+ * To adjust anything, simply edit the variables below and rebuild the theme.
+ ******************************************************************************/
+/*******************************************************************************
+ * Themes
+ ******************************************************************************/
+:root {
+  --global-bg-color: #ffffff;
+  --global-code-bg-color: rgba(181, 9, 172, 0.05);
+  --global-text-color: #000000;
+  --global-text-color-light: #828282;
+  --global-theme-color: #009f06;
+  --global-hover-color: #00ab37;
+  --global-footer-bg-color: #1C1C1D;
+  --global-footer-text-color: #e8e8e8;
+  --global-footer-link-color: #ffffff;
+  --global-distill-app-color: #828282;
+  --global-divider-color: rgba(0,0,0,.1);
+  --global-card-bg-color: #ffffff;
+}
+:root .fa-sun {
+  display: none;
+}
+:root .fa-moon {
+  padding-left: 10px;
+  padding-top: 12px;
+  display: block;
+}
+
+html[data-theme=dark] {
+  --global-bg-color: #1C1C1D;
+  --global-code-bg-color: #2c3237;
+  --global-text-color: #e8e8e8;
+  --global-text-color-light: #e8e8e8;
+  --global-theme-color: #2698BA;
+  --global-hover-color: #2698BA;
+  --global-footer-bg-color: #e8e8e8;
+  --global-footer-text-color: #1C1C1D;
+  --global-footer-link-color: #000000;
+  --global-distill-app-color: #e8e8e8;
+  --global-divider-color: #424246;
+  --global-card-bg-color: #212529;
+}
+html[data-theme=dark] .fa-sun {
+  padding-left: 10px;
+  padding-top: 12px;
+  display: block;
+}
+html[data-theme=dark] .fa-moon {
+  display: none;
+}
+
+/******************************************************************************
+ * Content
+ ******************************************************************************/
+body {
+  padding-bottom: 70px;
+  color: var(--global-text-color);
+  background-color: var(--global-bg-color);
+}
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  scroll-margin-top: 66px;
+}
+
+body.fixed-top-nav {
+  padding-top: 56px;
+}
+
+body.sticky-bottom-footer {
+  padding-bottom: 0;
+}
+
+.container {
+  max-width: 950px;
+}
+
+.profile img {
+  width: 100%;
+}
+
+/******************************************************************************
+ * Publications
+ ******************************************************************************/
+/*****************************************************************************
+* Projects
+*****************************************************************************/
+/*******************************************************************************
+ * Styles for the base elements of the theme.
+ ******************************************************************************/
+p, h1, h2, h3, h4, h5, h6, em, div, li, span, strong {
+  color: var(--global-text-color);
+}
+
+hr {
+  border-top: 1px solid var(--global-divider-color);
+}
+
+table td, table th {
+  color: var(--global-text-color);
+}
+table td {
+  font-size: 1rem;
+}
+
+a, table.table a {
+  color: var(--global-theme-color);
+}
+a:hover, table.table a:hover {
+  color: var(--global-theme-color);
+  text-decoration: underline;
+}
+a:hover:after :not(.nav-item.dropdown), table.table a:hover:after :not(.nav-item.dropdown) {
+  width: 100%;
+}
+
+figure, img {
+  max-width: 90vw;
+}
+
+blockquote {
+  background: var(--global-bg-color);
+  border-left: 2px solid var(--global-theme-color);
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  font-size: 1.2rem;
+}
+
+.equation {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.caption {
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.card {
+  background-color: var(--global-card-bg-color);
+}
+.card img {
+  width: 100%;
+}
+.card .card-title {
+  color: var(--global-text-color);
+}
+.card .card-item {
+  width: auto;
+  margin-bottom: 10px;
+}
+.card .card-item .row {
+  display: flex;
+  align-items: center;
+}
+
+.citation, .citation-number {
+  color: var(--global-theme-color);
+}
+
+.profile {
+  margin-left: 1rem;
+  width: 100%;
+}
+.profile .address {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-family: monospace;
+}
+.profile .address p {
+  display: inline-block;
+  margin: 0;
+}
+
+@media (min-width: 576px) {
+  .profile {
+    width: 30%;
+  }
+  .profile .address p {
+    display: block;
+  }
+}
+.post-description {
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+}
+.post-description a {
+  color: inherit;
+}
+.post-description a:hover {
+  color: var(--global-theme-color);
+  text-decoration: none;
+}
+
+.navbar {
+  box-shadow: none;
+  border-bottom: 1px solid var(--global-divider-color);
+  background-color: var(--global-bg-color);
+  opacity: 0.95;
+}
+
+.navbar .dropdown-menu {
+  background-color: var(--global-bg-color);
+  border: 1px solid var(--global-divider-color);
+}
+.navbar .dropdown-menu a:not(.active) {
+  color: var(--global-text-color);
+}
+.navbar .dropdown-menu a:hover {
+  color: var(--global-hover-color);
+}
+.navbar .dropdown-menu .dropdown-divider {
+  border-top: 1px solid var(--global-divider-color) !important;
+}
+
+.dropdown-item {
+  color: var(--global-text-color);
+}
+.dropdown-item:hover {
+  color: var(--global-hover-color);
+  background-color: var(--global-bg-color);
+}
+
+.navbar.navbar-light a:hover {
+  text-decoration: none;
+}
+.navbar.navbar-light .navbar-brand {
+  color: var(--global-text-color);
+}
+.navbar.navbar-light .navbar-nav .nav-item .nav-link {
+  color: var(--global-text-color);
+}
+.navbar.navbar-light .navbar-nav .nav-item .nav-link:hover {
+  color: var(--global-hover-color);
+}
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
+  background-color: inherit;
+  font-weight: bolder;
+  color: var(--global-theme-color);
+}
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link:hover {
+  color: var(--global-hover-color);
+}
+.navbar.navbar-light .navbar-brand.social {
+  padding-bottom: 0;
+  padding-top: 0;
+  font-size: 1.7rem;
+}
+.navbar.navbar-light .navbar-brand.social a i::before {
+  color: var(--global-text-color);
+  transition-property: all 0.2s ease-in-out;
+}
+.navbar.navbar-light .navbar-brand.social a:hover i::before {
+  color: var(--global-theme-color);
+}
+
+.navbar-toggler .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--global-text-color);
+  border-radius: 1px;
+  margin-bottom: 4px;
+  transition: all 0.2s;
+}
+.navbar-toggler .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
+}
+.navbar-toggler .middle-bar {
+  opacity: 0;
+}
+.navbar-toggler .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
+}
+
+.navbar-toggler.collapsed .top-bar {
+  transform: rotate(0);
+}
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1;
+}
+.navbar-toggler.collapsed .bottom-bar {
+  transform: rotate(0);
+}
+
+.social {
+  text-align: center;
+}
+.social .contact-icons {
+  font-size: 4rem;
+}
+.social .contact-icons a i::before {
+  color: var(--global-text-color);
+  transition-property: all 0.2s ease-in-out;
+}
+.social .contact-icons a:hover i::before {
+  color: var(--global-theme-color);
+}
+.social .contact-note {
+  font-size: 0.8rem;
+}
+
+footer.fixed-bottom {
+  background-color: var(--global-footer-bg-color);
+  font-size: 0.75rem;
+}
+footer.fixed-bottom .container {
+  color: var(--global-footer-text-color);
+  padding-top: 9px;
+  padding-bottom: 8px;
+}
+footer.fixed-bottom a {
+  color: var(--global-footer-link-color);
+}
+footer.fixed-bottom a:hover {
+  color: var(--global-theme-color);
+  text-decoration: none;
+}
+
+footer.sticky-bottom {
+  border-top: 1px solid var(--global-divider-color);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: 0.9rem;
+}
+
+.header-bar {
+  border-bottom: 1px solid var(--global-divider-color);
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+.header-bar h1 {
+  color: var(--global-theme-color);
+  font-size: 5rem;
+}
+
+.post-list {
+  margin: 0;
+  margin-bottom: 40px;
+  padding: 0;
+}
+.post-list li {
+  border-bottom: 1px solid var(--global-divider-color);
+  list-style: none;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.post-list li .post-meta {
+  color: var(--global-text-color-light);
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+.post-list li .post-tags {
+  color: var(--global-text-color-light);
+  font-size: 0.875rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0;
+}
+.post-list li a {
+  color: var(--global-text-color);
+  text-decoration: none;
+}
+.post-list li a:hover {
+  color: var(--global-theme-color);
+}
+
+.pagination .page-item .page-link {
+  color: var(--global-text-color);
+}
+.pagination .page-item .page-link:hover {
+  color: #000000;
+}
+.pagination .page-item.active .page-link {
+  color: #ffffff;
+  background-color: var(--global-theme-color);
+}
+.pagination .page-item.active .page-link:hover {
+  background-color: var(--global-theme-color);
+}
+
+.distill a:hover {
+  border-bottom-color: var(--global-theme-color);
+  text-decoration: none;
+}
+
+.projects a {
+  text-decoration: none;
+}
+.projects a:hover .card-title {
+  color: var(--global-theme-color);
+}
+.projects .card img {
+  width: 100%;
+}
+.projects .card-item {
+  width: auto;
+  margin-bottom: 10px;
+}
+.projects .card-item .row {
+  display: flex;
+  align-items: center;
+}
+.projects .grid-sizer, .projects .grid-item {
+  width: 250px;
+  margin-bottom: 10px;
+}
+.projects h2.category {
+  color: var(--global-divider-color);
+  border-bottom: 1px solid var(--global-divider-color);
+  padding-top: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+.publications {
+  margin-top: 2rem;
+}
+.publications h1 {
+  color: var(--global-theme-color);
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.publications h2 {
+  margin-bottom: 1rem;
+}
+.publications h2 span {
+  font-size: 1.5rem;
+}
+.publications h2.year {
+  color: var(--global-divider-color);
+  border-top: 1px solid var(--global-divider-color);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  margin-bottom: -2rem;
+  text-align: right;
+}
+.publications ol.bibliography {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+}
+.publications ol.bibliography li {
+  margin-bottom: 1rem;
+}
+.publications ol.bibliography li .abbr {
+  height: 2rem;
+  margin-bottom: 0.5rem;
+}
+.publications ol.bibliography li .abbr abbr {
+  display: inline-block;
+  width: 120px;
+  height: 20px;
+  background-color: var(--global-theme-color);
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.publications ol.bibliography li .abbr abbr a {
+  color: white;
+}
+.publications ol.bibliography li .abbr abbr a:hover {
+  text-decoration: none;
+}
+.publications ol.bibliography li .abbr .award {
+  color: var(--global-theme-color) !important;
+  border: 1px solid var(--global-theme-color);
+}
+.publications ol.bibliography li .title {
+  font-weight: bolder;
+}
+.publications ol.bibliography li .author a {
+  border-bottom: 1px dashed var(--global-theme-color);
+}
+.publications ol.bibliography li .author a:hover {
+  border-bottom-style: solid;
+  text-decoration: none;
+}
+.publications ol.bibliography li .author > em {
+  border-bottom: 1px solid;
+  font-style: normal;
+}
+.publications ol.bibliography li .links a.btn {
+  color: var(--global-text-color);
+  border: 1px solid var(--global-text-color);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.publications ol.bibliography li .links a.btn:hover {
+  color: var(--global-theme-color);
+  border-color: var(--global-theme-color);
+}
+.publications ol.bibliography li .hidden {
+  font-size: 0.875rem;
+  max-height: 0px;
+  overflow: hidden;
+  text-align: justify;
+  transition-property: 0.15s ease;
+  -moz-transition: 0.15s ease;
+  -ms-transition: 0.15s ease;
+  -o-transition: 0.15s ease;
+  transition: all 0.15s ease;
+}
+.publications ol.bibliography li .hidden p {
+  line-height: 1.4em;
+  margin: 10px;
+}
+.publications ol.bibliography li .hidden pre {
+  font-size: 1em;
+  line-height: 1.4em;
+  padding: 10px;
+}
+.publications ol.bibliography li .hidden.open {
+  max-height: 100em;
+  transition-property: 0.15s ease;
+  -moz-transition: 0.15s ease;
+  -ms-transition: 0.15s ease;
+  -o-transition: 0.15s ease;
+  transition: all 0.15s ease;
+}
+.publications ol.bibliography li div.abstract.hidden {
+  border: dashed 1px var(--global-bg-color);
+}
+.publications ol.bibliography li div.abstract.hidden.open {
+  border-color: var(--global-text-color);
+}
+
+figure.highlight {
+  margin: 0 0 1rem;
+}
+
+pre {
+  color: var(--global-theme-color);
+  background-color: var(--global-code-bg-color);
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+pre pre, pre code {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+}
+
+code {
+  color: var(--global-theme-color);
+  background-color: var(--global-code-bg-color);
+  border-radius: 3px;
+  padding: 3px 3px;
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
+
+.post .post-meta {
+  color: var(--global-text-color-light);
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+.post .post-tags {
+  color: var(--global-text-color-light);
+  font-size: 0.875rem;
+  padding-top: 0.25rem;
+  padding-bottom: 1rem;
+}
+.post .post-tags a {
+  color: var(--global-text-color-light);
+  text-decoration: none;
+}
+.post .post-tags a:hover {
+  color: var(--global-theme-color);
+}
+.post .post-content blockquote {
+  border-left: 5px solid var(--global-theme-color);
+  padding: 8px;
+}
+
+/*******************************************************************************
+ * Style overrides for distill blog posts.
+ ******************************************************************************/
+d-byline {
+  border-top-color: var(--global-divider-color) !important;
+}
+
+d-byline h3 {
+  color: var(--global-text-color) !important;
+}
+
+d-byline a, d-article d-byline a {
+  color: var(--global-text-color) !important;
+}
+d-byline a:hover, d-article d-byline a:hover {
+  color: var(--global-hover-color) !important;
+}
+
+d-article {
+  border-top-color: var(--global-divider-color) !important;
+}
+d-article a, d-article p, d-article h1, d-article h2, d-article h3, d-article h4, d-article h5, d-article h6, d-article li, d-article table {
+  color: var(--global-text-color) !important;
+}
+d-article a, d-article h1, d-article h2, d-article hr, d-article table, d-article table th, d-article table td {
+  border-bottom-color: var(--global-divider-color) !important;
+}
+d-article a:hover {
+  border-bottom-color: var(--global-hover-color) !important;
+}
+d-article b i {
+  display: inline;
+}
+d-article d-contents {
+  align-self: start;
+  grid-column: 1/4;
+  grid-row: auto/span 4;
+  justify-self: end;
+  margin-top: 0em;
+  padding-left: 2em;
+  padding-right: 3em;
+  border-right: 1px solid var(--global-divider-color);
+  width: max(70%, 300px);
+  margin-right: 0px;
+  margin-top: 0em;
+  display: grid;
+  grid-template-columns: minmax(8px, 1fr) [toc] auto minmax(8px, 1fr) [toc-line] 1px minmax(32px, 2fr);
+}
+d-article d-contents nav {
+  grid-column: toc;
+}
+d-article d-contents nav a {
+  border-bottom: none !important;
+}
+d-article d-contents nav a:hover {
+  border-bottom: 1px solid var(--global-text-color) !important;
+}
+d-article d-contents nav h3 {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+d-article d-contents nav div {
+  display: block;
+  outline: none;
+  margin-bottom: 0.8em;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+}
+d-article d-contents nav ul {
+  padding-left: 1em;
+  margin-top: 0;
+  margin-bottom: 6px;
+  list-style-type: none;
+}
+d-article d-contents nav ul li {
+  margin-bottom: 0.25em;
+}
+d-article d-contents .figcaption {
+  line-height: 1.4em;
+}
+d-article d-contents toc-line {
+  border-right: 1px solid var(--global-divider-color);
+  grid-column: toc-line;
+}
+d-article d-footnote {
+  scroll-margin-top: 66px;
+}
+
+d-appendix {
+  border-top-color: var(--global-divider-color) !important;
+  color: var(--global-distill-app-color) !important;
+}
+d-appendix h3, d-appendix li, d-appendix span {
+  color: var(--global-distill-app-color) !important;
+}
+d-appendix a, d-appendix a.footnote-backlink {
+  color: var(--global-distill-app-color) !important;
+}
+d-appendix a:hover, d-appendix a.footnote-backlink:hover {
+  color: var(--global-hover-color) !important;
+}
+
+@media (max-width: 1024px) {
+  d-article d-contents {
+    display: block;
+    grid-column-start: 2;
+    grid-column-end: -2;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-top: 0.5em;
+    width: 100%;
+    border: 1px solid var(--global-divider-color);
+  }
+  d-article d-contents nav {
+    grid-column: none;
+  }
+}
+/* ===== Timeline (News) — 无圆点版本 ===================================== */
+:root {
+  --tl-date-width: 5rem; /* 日期栏宽度 */
+  --tl-gap: 2.2rem; /* 日期列与内容列之间水平空隙 */
+  --tl-line: #d0d7de; /* 中间竖线颜色 */
+}
+
+/* ===== 布局主体 ===== */
+.timeline {
+  display: grid;
+  grid-template-columns: var(--tl-date-width) 1fr;
+  column-gap: var(--tl-gap);
+  row-gap: 1.25rem;
+  position: relative;
+  margin: 2rem 0;
+}
+
+/* 竖线 */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--tl-date-width) + var(--tl-gap) / 2);
+  width: 1px;
+  background: var(--tl-line);
+}
+
+/* 每条新闻行 */
+.tl-row {
+  display: contents;
+}
+
+/* 日期列 */
+.tl-date {
+  font-size: 0.9rem; /* 稍小于正文 */
+  line-height: 1.4;
+  font-weight: 400;
+  color: #444;
+  text-align: left;
+}
+
+/* 内容列 */
+.tl-content {
+  line-height: 1.45;
+}
+
+/* 链接颜色可保持默认主题色；如需自定义在这里改 */
+.news-title {
+  text-decoration: none;
+}
+
+.news-title:hover {
+  text-decoration: underline;
+}
+
+.team-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px #e5e5e5;
+  transition: transform 0.25s;
+}
+
+.team-avatar:hover {
+  transform: scale(1.05);
+}
+
+/* ==== custom button color only for Teams page ========================== */
+.team-btn {
+  color: #00695c; /* 深绿（文字+边框）*/
+  border-color: #00695c;
+  transition: background 0.25s;
+}
+.team-btn:hover {
+  background: #00695c; /* 悬停实心 */
+  color: #fff;
+}
+
+.team-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px #e5e5e5;
+  transition: transform 0.25s;
+}
+
+.team-avatar:hover {
+  transform: scale(1.05);
+}
+
+/* 自定义按钮颜色 */
+.team-btn {
+  color: #00695c;
+  border-color: #00695c;
+  transition: background 0.25s;
+}
+
+.team-btn:hover {
+  background: #00695c;
+  color: #fff;
+}
+
+/* 在 navigation 中给 “/teams/” 这个链接追加一个图标 */
+.navbar-nav .nav-item a[href="/teams/"]::after {
+  content: "";
+  display: inline-block;
+  width: 15px; /* 根据需要调大小 */
+  height: 15px;
+  margin-left: 2px;
+  background: url("/assets/img/lumi_logo.png") no-repeat center/contain;
+}
+
+/* === Custom: paper labels & links === */
+:root {
+  --accent: var(--global-theme-color, #159957);
+}
+
+/* 论文标题链接：柔和下划线 */
+.paper-link {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.18em;
+  text-decoration-color: rgba(21, 153, 87, 0.35);
+}
+
+.paper-link:hover {
+  text-decoration-color: var(--accent);
+}
+
+/* —— 徽章通用：默认主色 + 间距 —— */
+.badge, .badge--fill, .badge-flag {
+  --c: 21,153,87;
+}
+
+.badge, .badge--fill, .badge-flag {
+  margin-right: 0.45rem;
+  vertical-align: baseline;
+}
+
+/* 方案 1｜现代渐变描边 */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: 0.26rem 0.72rem 0.28rem;
+  border-radius: 999px;
+  font-weight: 650;
+  font-size: 0.9em;
+  letter-spacing: 0.2px;
+  line-height: 1;
+  color: rgb(var(--c));
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(135deg, rgba(var(--c), 0.55), rgba(var(--c), 0.18)) border-box;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 6px 16px rgba(var(--c), 0.12);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+}
+
+.badge::before {
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9) 0 45%, transparent 46% 100%), rgb(var(--c));
+  box-shadow: 0 0 0 3px rgba(var(--c), 0.14);
+}
+
+.badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 10px rgba(var(--c), 0.22), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  .badge {
+    color: #9be7c4;
+    background: linear-gradient(#0f1114, #0f1114) padding-box, linear-gradient(135deg, rgba(var(--c), 0.55), rgba(var(--c), 0.25)) border-box;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04) inset, 0 4px 14px rgba(0, 0, 0, 0.35);
+  }
+  .badge::before {
+    box-shadow: 0 0 0 3px rgba(var(--c), 0.22);
+  }
+}
+/* 方案 2｜实心柔光胶囊 */
+.badge--fill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: 0.26rem 0.72rem 0.28rem;
+  border-radius: 999px;
+  font-weight: 650;
+  font-size: 0.9em;
+  letter-spacing: 0.2px;
+  line-height: 1;
+  color: #0b3d2c;
+  background: linear-gradient(180deg, rgba(var(--c), 0.16), rgba(var(--c), 0.1));
+  border: 1px solid rgba(var(--c), 0.28);
+  box-shadow: 0 2px 8px rgba(var(--c), 0.14) inset, 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.badge--fill::before {
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background: rgb(var(--c));
+  box-shadow: 0 0 0 3px rgba(var(--c), 0.18);
+}
+
+/* 方案 3｜旗标式条形（用于 News legend & 出版物列表统一风格） */
+.badge-flag {
+  position: relative;
+  display: inline-block;
+  padding: 0.2rem 0.6rem 0.22rem 0.9rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.9em;
+  letter-spacing: 0.3px;
+  border: 1px solid rgba(var(--c), 0.28);
+  background: #fff;
+  color: #0f172a;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.badge-flag::before {
+  content: "";
+  position: absolute;
+  left: 0.35rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.42rem;
+  height: 1.05em;
+  border-radius: 2px;
+  background: linear-gradient(180deg, rgba(var(--c), 0.9), rgba(var(--c), 0.55));
+}
+
+@media (prefers-color-scheme: dark) {
+  .badge-flag {
+    background: #0f1114;
+    color: #e6edf3;
+  }
+}
+/* —— 分类颜色映射 —— */
+.badge[data-conf=publication],
+.badge--fill[data-conf=publication],
+.badge-flag[data-conf=publication] {
+  --c: 19,138,78;
+} /* #138A4E - 保持原绿色 */
+.badge[data-conf=funding],
+.badge--fill[data-conf=funding],
+.badge-flag[data-conf=funding] {
+  --c: 14,165,233;
+} /* #2C828D - 青绿色 */
+.badge[data-conf=activity],
+.badge--fill[data-conf=activity],
+.badge-flag[data-conf=activity] {
+  --c: 55,65,81;
+} /* #C17B37 - 琥珀色 */
+/* —— News 标题 + Legend：竖排、左对齐，与标题留出空隙 —— */
+.news-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin: 0.25rem 0 0.9rem;
+}
+
+.news-title {
+  margin: 0;
+}
+
+.news-legend {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  margin-top: 0.6rem;
+  justify-content: flex-start;
+}
+
+.news-legend .badge-flag {
+  font-size: 0.82em;
+  padding: 0.18rem 0.55rem 0.2rem 0.85rem;
+}
+
+/* —— Selected Publications：把左侧 ICML/AAAI… 改成与 News 一致的旗标式 —— */
+/* 下面这些选择器覆盖不同版本主题可能使用的容器命名 */
+.selected-publications .badge,
+.publications .badge,
+ol.bibliography .badge {
+  position: relative !important;
+  display: inline-block !important;
+  padding: 0.18rem 0.6rem 0.2rem 0.9rem !important; /* 留出左侧竖条 */
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  font-size: 0.8em !important;
+  letter-spacing: 0.3px !important;
+  background: #fff !important;
+  color: #0f172a !important; /* 深灰文字，白底清晰 */
+  border: 1px solid rgba(var(--c), 0.28) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06) !important;
+}
+
+.selected-publications .badge::before,
+.publications .badge::before,
+ol.bibliography .badge::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0.35rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.42rem;
+  height: 1.05em;
+  border-radius: 2px;
+  background: linear-gradient(180deg, rgba(var(--c), 0.9), rgba(var(--c), 0.55)) !important;
+  box-shadow: none !important;
+}
+
+/* 若某条目 abbr 为空，则隐藏空徽章，避免留空框 */
+.selected-publications .badge:empty,
+.publications .badge:empty,
+ol.bibliography .badge:empty {
+  display: none !important;
+}
+
+/* 深色模式下，出版物标签的底色与文本也适配 */
+@media (prefers-color-scheme: dark) {
+  .selected-publications .badge,
+  .publications .badge,
+  ol.bibliography .badge {
+    background: #0f1114 !important;
+    color: #e6edf3 !important;
+    border-color: rgba(var(--c), 0.35) !important;
+  }
+}
+/* === News 可滚动容器（美观版） === */
+.news-scroll {
+  /* 高度可通过行内变量覆盖：style="--news-height: 420px" */
+  --news-height: 420px;
+  max-height: var(--news-height);
+  overflow: auto;
+  scrollbar-gutter: stable both-edges; /* 避免滚动条出现时跳动（Chrome 等） */
+  padding: 0.25rem 0.35rem 0.25rem 0.25rem; /* 预留一点右侧空间给滚动条 */
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  position: relative;
+}
+
+/* 顶/底部渐隐提示（更优雅地提示可滚动） */
+.news-scroll::before,
+.news-scroll::after {
+  content: "";
+  position: sticky;
+  left: 0;
+  right: 0;
+  height: 14px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.news-scroll::before {
+  top: 0;
+  background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0));
+}
+
+.news-scroll::after {
+  bottom: 0;
+  background: linear-gradient(to top, #fff, rgba(255, 255, 255, 0));
+}
+
+/* 自定义滚动条（WebKit） */
+.news-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.news-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.news-scroll::-webkit-scrollbar-thumb {
+  background-clip: padding-box;
+  border: 3px solid transparent; /* 形成与轨道的留白 */
+  border-radius: 8px;
+  background-color: rgba(21, 153, 87, 0.45); /* 绿：与你站点的 accent 协调 */
+}
+
+.news-scroll:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(21, 153, 87, 0.6);
+}
+
+.news-scroll::-webkit-scrollbar-thumb:active {
+  background-color: rgba(21, 153, 87, 0.75);
+}
+
+/* FireFox 滚动条颜色 */
+.news-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(21, 153, 87, 0.55) transparent;
+}
+
+/* 移动端高度优化（更占屏一点） */
+@media (max-width: 576px) {
+  .news-scroll {
+    max-height: 55vh;
+  }
+}
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark) {
+  .news-scroll {
+    background: #0f1114;
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  .news-scroll::before {
+    background: linear-gradient(to bottom, #0f1114, rgba(15, 17, 20, 0));
+  }
+  .news-scroll::after {
+    background: linear-gradient(to top, #0f1114, rgba(15, 17, 20, 0));
+  }
+  .news-scroll {
+    scrollbar-color: rgba(21, 153, 87, 0.55) transparent;
+  }
+}
+/* === 让 News 框更高（桌面端） === */
+.news-scroll {
+  height: 800px !important; /* 想更高就改成 680/720px */
+  max-height: none !important; /* 取消之前的 max-height 限制 */
+}
+
+/* 小屏高度（可选） */
+@media (max-width: 576px) {
+  .news-scroll {
+    height: 60vh !important;
+  } /* 保持移动端更灵活 */
+}
+/* 关闭 News 标题在 hover 时的下划线/描边/阴影 */
+.news-title,
+.news-title:hover,
+.news-title:focus,
+.news-header h2,
+.news-header h2:hover,
+.news-header h2:focus {
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+/* 如果标题里被包了锚点链接，也一并去掉它的下划线 */
+.news-title a,
+.news-title a:hover,
+.news-title a:focus {
+  color: inherit !important;
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+/*# sourceMappingURL=main.css.map */
