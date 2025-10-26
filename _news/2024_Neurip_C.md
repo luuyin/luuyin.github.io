@@ -6,5 +6,5 @@ inline: true
 
 
 
-<span class="badge-flag" data-conf="iclr">NeurIPS Challenge</span> &#128293; Excited to co-organize NeurIPS 2024  challenge [Edge-Device Large Language Model Competition](https://edge-llms-challenge.github.io/edge-llm-challenge.github.io/). We invite you to join the competition!
+<span class="badge-flag" data-conf="publication">NeurIPS Challenge</span> &#128293; Excited to co-organize NeurIPS 2024  challenge [Edge-Device Large Language Model Competition](https://edge-llms-challenge.github.io/edge-llm-challenge.github.io/). We invite you to join the competition!
 

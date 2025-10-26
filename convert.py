@@ -4,7 +4,7 @@ from pathlib import Path
 
 def convert_brackets_to_span(content):
     """
-    将 [标签内容] 格式转换为 <span class="badge-flag" data-conf="iclr">标签内容</span> 格式
+    将 [标签内容] 格式转换为 <span class="badge-flag" data-conf="publication">标签内容</span> 格式
     只转换行首的方括号标签
     """
     # 正则表达式匹配行首的 [xxx] 格式
@@ -32,13 +32,13 @@ def determine_conf_value(tag_content):
     """
     tag_lower = tag_content.lower()
 
-    return 'iclr'
+    return 'publication'
     
     # # 根据会议/期刊名称设置不同的 conf 值
     # if 'neurips' in tag_lower:
     #     return 'neurips'
-    # elif 'iclr' in tag_lower:
-    #     return 'iclr'
+    # elif 'publication' in tag_lower:
+    #     return 'publication'
     # elif 'icml' in tag_lower:
     #     return 'icml'
     # elif 'cvpr' in tag_lower:

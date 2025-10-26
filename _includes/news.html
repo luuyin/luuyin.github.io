@@ -1,5 +1,8 @@
 <div class="news">
-  <h2>News</h2>
+  {% unless include.hide_title %}
+  <h2 id="news">News</h2>
+  {% endunless %}
+
 
   {% if site.news %}
     {%- assign grouped = site.news | reverse

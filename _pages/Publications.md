@@ -15,26 +15,3 @@ nav_order: 2
 </script>
 
 
-
-
-<!-- ### *Sparse Neural Network*
-<div class="publications">
-
-{%- for y in page.years %}
-  <h2 class="year">{{y}}</h2>
-  {% bibliography -f papers -q @*[year={{y}}]* %}
-{% endfor %}
-
-</div>
-
-<br>
-### *Data Efficiency and Knowledge Elicitation*
-
-<div class="publications">
-{%- for y in page.years_2 %}
-  <h2 class="year">{{y}}</h2>
-  {% bibliography -f papers_2 -q @*[year={{y}}]* %}
-{% endfor %}
-
-
-</div> -->

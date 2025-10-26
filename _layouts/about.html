@@ -3,57 +3,92 @@ layout: default
 ---
 
 <!-- about.html -->
-      <div class="post">
-        <header class="post-header">
-          <h1 class="post-title">
-           {% if site.title == "blank" -%}<span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}{%- else -%}{{ site.title }}{%- endif %}
-          </h1>
-          <p class="desc">{{ page.subtitle }}</p>
-        </header>
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      {% if site.title == "blank" -%}
+        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
+      {%- else -%}
+        {{ site.title }}
+      {%- endif %}
+    </h1>
+    <p class="desc">{{ page.subtitle }}</p>
+  </header>
 
-        <article>
-          {% if page.profile -%}
-          <div class="profile float-{%- if page.profile.align == 'left' -%}left{%- else -%}right{%- endif -%}">
-            {%- if page.profile.image %}
-              {%- assign profile_image_path = page.profile.image | prepend: 'assets/img/' -%}
-              {% include figure.html 
-              path=profile_image_path 
-              class="img-fluid z-dept-1 rounded"
-              alt=page.profile.image -%}
-            {% endif -%}
-            {%- if page.profile.address %}
-            <div class="address">
-              {{ page.profile.address }}
-            </div>
-            {%- endif %}
-          </div>
-          {%- endif %}
+  <article>
+    {% if page.profile -%}
+    <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+      {% if page.profile.image %}
+        {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+        {% include figure.html
+           path=profile_image_path
+           class="img-fluid z-dept-1 rounded"
+           alt=page.profile.image %}
+      {% endif %}
+      {% if page.profile.address %}
+      <div class="address">
+        {{ page.profile.address }}
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
 
-          <div class="clearfix">
-            {{ content }}
-          </div>
+    <div class="clearfix">
+      {{ content }}
+    </div>
 
-          {% if page.news -%}
-          <!-- News -->
-          {%- include news.html %}
-          {%- endif %}
-          {% if page.selected_ -%}
-            <!-- Selected papers -->
-            {%- include selected_papers.html %}
-          {%- endif %}
-          {%- if page.social %}
-          <!-- Social -->
-          <div class="social">
-            <div class="contact-icons">
-            {% include social.html %}
-            </div>
+    {% if page.news %}
 
-            <div class="contact-note">
-              {{ site.contact_note }}
-            </div>
-            
-          </div>
-          {%- endif %}
-        </article>
+    <div style="
+      border: 3px solid #138A4E; 
+      padding: 15px 20px; 
+      border-radius: 12px; 
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); 
+      margin-top: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 0 1px rgba(19, 138, 78, 0.1), 
+                  0 4px 20px rgba(19, 138, 78, 0.2);
+    ">
+    <h4 style="color: #138A4E; margin: 0 0 10px 0; font-size: 1.1em;">
+    🎓 PhD Opportunities with CSC Funding
+    </h4>
+    <p style="margin: 0;">
+    I am actively seeking motivated PhD students for 2025/2026 admission with <strong style="color: #138A4E;">CSC (China Scholarship Council)</strong> funding support. Join our LUMI lab and collaborate with world-class researchers. Please email me with your CV and transcripts (Subject: "CSC 2025 - Your Name") if interested. Early contact is encouraged for timely application preparation.
+    </p>
+    </div>
 
+
+      <!-- News 标题 + Legend（保持你现在的样式） -->
+      <div class="news-header">
+        <h2 id="news" class="news-title">News</h2>
+        <div class="news-legend" role="group" aria-label="Legend">
+          <span class="badge-flag" data-conf="publication">Publication</span>
+          <span class="badge-flag" data-conf="activity">Activity</span>
+          <span class="badge-flag" data-conf="funding">Funding</span>
+        </div>
+      </div>
+
+      <!-- ✅ 固定高度的滚动容器：这里用 height，确保一定会产生滚动 -->
+      <div class="news-scroll" style="--news-height: 420px;">
+        {% include news.html hide_title=true %}
+      </div>
+    {% endif %}
+
+
+    {% if page.selected_papers -%}
+      {%- include selected_papers.html %}
+    {%- endif %}
+
+    {% if page.social %}
+    <!-- Social -->
+    <div class="social">
+      <div class="contact-icons">
+        {% include social.html %}
+      </div>
+      <div class="contact-note">
+        {{ site.contact_note }}
+      </div>
+    </div>
+    {% endif %}
+  </article>
 </div>
