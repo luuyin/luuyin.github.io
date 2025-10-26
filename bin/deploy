@@ -1,99 +1,65 @@
 #!/usr/bin/env bash
-#
-# bin/deploy   ―  Build site on SRC_BRANCH (default master) and
-#                 force‑push static files to DEPLOY_BRANCH (default main).
-#                 Requires ImageMagick (convert) installed locally.
+set -Eeuo pipefail
 
-###############################################################################
-# 参数解析
-###############################################################################
-
-SRC_BRANCH="master"
+# 使用方法：
+#   bin/deploy -d main             # 从“当前分支的 HEAD”构建，然后发布到 main 分支
+#   bin/deploy -d gh-pages         # 或发布到 gh-pages
 DEPLOY_BRANCH="main"
-NO_PUSH=""
-USAGE="usage: deploy [-h|--help] [-u|--user] [-s|--src SRC_BRANCH] \
-[-d|--deploy DEPLOY_BRANCH] [--verbose] [--no-push]"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    -h|--help)   echo "$USAGE"; exit 0 ;;
-    -u|--user)   SRC_BRANCH="source"; DEPLOY_BRANCH="master" ;;
-    -s|--src)    SRC_BRANCH="$2"; shift ;;
     -d|--deploy) DEPLOY_BRANCH="$2"; shift ;;
     --verbose)   set -x ;;
-    --no-push)   NO_PUSH="--no-push" ;;
-    *)           echo "Unknown option $1"; echo "$USAGE"; exit 1 ;;
+    -h|--help)   echo "usage: bin/deploy [-d|--deploy DEPLOY_BRANCH]"; exit 0 ;;
+    *)           echo "Unknown option $1"; exit 1 ;;
   esac
   shift
 done
 
-set -e  # 子命令出错即退出
-
-###############################################################################
-# 前置检查
-###############################################################################
-
-# 1) 工作区必须干净
+# 1) 保证工作区干净
 if ! git diff-index --quiet HEAD --; then
   echo "⛔ 尚有未提交修改，请先 commit。"; exit 1
 fi
 if [[ -n "$(git ls-files --exclude-standard --others)" ]]; then
-  echo "⛔ 尚有未跟踪文件，请先 commit 或 stash：" ; \
-  git ls-files --exclude-standard --others ; exit 1
-fi
-
-# 2) 必须安装 ImageMagick（convert）
-if ! command -v convert >/dev/null 2>&1; then
-  echo "⛔ 未检测到 ImageMagick（convert）。请先安装："
-  echo "   sudo apt-get install -y imagemagick webp"
+  echo "⛔ 尚有未跟踪文件，请先 commit 或清理："
+  git ls-files --exclude-standard --others
   exit 1
 fi
 
-###############################################################################
-# 切换分支 & 构建
-###############################################################################
+# 2) 用当前分支的 HEAD 作为构建源码（不会切换分支）
+SRC_REF="$(git rev-parse --verify HEAD)"
+echo "🚀 Build from: $(git rev-parse --abbrev-ref HEAD) @ $SRC_REF"
+echo "🚀 Deploy to  : $DEPLOY_BRANCH"
 
-echo "🚀 Deploying：$SRC_BRANCH  →  $DEPLOY_BRANCH"
-
-git checkout -B "$SRC_BRANCH"
-
-git branch -D "$DEPLOY_BRANCH" 2>/dev/null || true
-git checkout -b "$DEPLOY_BRANCH"
-
+# 3) 构建到临时目录
+BUILD_DIR="$(mktemp -d)"
 export JEKYLL_ENV=production
-bundle exec jekyll build
+bundle exec jekyll build --source . --destination "$BUILD_DIR"
 
-###############################################################################
-# 清理旧文件并移动 _site
-###############################################################################
-
-find . -maxdepth 1 ! -name '.' \
-                   ! -name '_site' \
-                   ! -name '.git' \
-                   ! -name 'CNAME' \
-                   ! -name '.gitignore' \
-                   ! -name '.gitattributes' \
-                   ! -name '.nojekyll' \
-                   -exec rm -rf {} +
-
-mv _site/* .
-rm -rf _site/
-
-# 阻止 GitHub Pages 再跑 Jekyll
-touch .nojekyll
-
-# 可选：确保 WebP 有正确 MIME
-if [[ ! -f .gitattributes ]]; then
-  echo '*.webp binary' > .gitattributes
+# 4) 用 worktree 检出部署分支到临时目录
+PUB_DIR="$(mktemp -d)"
+# 如果远端已有该分支，用远端作为起点；否则本地创建一个新的
+if git ls-remote --exit-code --heads origin "$DEPLOY_BRANCH" >/dev/null 2>&1; then
+  git worktree add -B "$DEPLOY_BRANCH" "$PUB_DIR" "origin/$DEPLOY_BRANCH"
+else
+  git worktree add -B "$DEPLOY_BRANCH" "$PUB_DIR"
 fi
 
-###############################################################################
-# 推送
-###############################################################################
+# 5) 同步静态文件到部署分支（删除多余文件）
+rsync -a --delete --exclude '.git' "$BUILD_DIR"/ "$PUB_DIR"/
 
-git add -fA
-git commit --allow-empty -m "Deploy $(date +'%F %T')" || true
-[[ -z "$NO_PUSH" ]] && git push -f origin "$DEPLOY_BRANCH"
+# 6) 阻止 Pages 再跑 Jekyll
+touch "$PUB_DIR/.nojekyll"
 
-git checkout "$SRC_BRANCH"
-echo "✅  Deploy 完成！"
+# 7) 提交并推送
+pushd "$PUB_DIR" >/dev/null
+git add -A
+git commit -m "Deploy $(date +'%F %T')" || true
+git push origin "$DEPLOY_BRANCH"
+popd >/dev/null
+
+# 8) 清理
+git worktree remove "$PUB_DIR" --force
+rm -rf "$BUILD_DIR"
+
+echo "✅ Done."
