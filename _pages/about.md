@@ -17,7 +17,7 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 
-Greetings! I'm Lu, an Assistant Professor in the School of Computer Science and Electronic Engineering at the [University of Surrey](https://www.surrey.ac.uk/). I am honored to be a long-term visitor and collaborator with the [Visual Informatics Group (VITA)](https://vita-group.github.io/) at UT Austin. Additionally, I am a visiting scholar at [Eindhoven University of Technology (TU/e)](https://www.tue.nl/en/) and [MPI-Ellis](https://www.tuebingen.mpg.de/212585/ellis).
+Greetings! I'm Lu, an Assistant Professor in the School of Computer Science and Electronic Engineering at the [University of Surrey](https://www.surrey.ac.uk/). I am honored to be a long-term visitor and collaborator with the [Visual Informatics Group (VITA)](https://vita-group.github.io/) at UT Austin. Additionally, I am a visiting scholar at [Eindhoven University of Technology (TU/e)](https://www.tue.nl/en/) and [MPI-ELLIS](https://www.tuebingen.mpg.de/212585/ellis).
 
 
 Previously, I served as a Postdoctoral Fellow at [TU/e](https://www.tue.nl/en/) and worked as a research scientist intern at Google's New York City office.
