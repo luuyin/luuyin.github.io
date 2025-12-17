@@ -880,16 +880,6 @@ d-appendix a:hover, d-appendix a.footnote-backlink:hover {
   box-shadow: 0 2px 10px rgba(var(--c), 0.22), 0 1px 2px rgba(0, 0, 0, 0.06);
 }
 
-@media (prefers-color-scheme: dark) {
-  .badge {
-    color: #9be7c4;
-    background: linear-gradient(#0f1114, #0f1114) padding-box, linear-gradient(135deg, rgba(var(--c), 0.55), rgba(var(--c), 0.25)) border-box;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04) inset, 0 4px 14px rgba(0, 0, 0, 0.35);
-  }
-  .badge::before {
-    box-shadow: 0 0 0 3px rgba(var(--c), 0.22);
-  }
-}
 /* 方案 2｜实心柔光胶囊 */
 .badge--fill {
   display: inline-flex;
@@ -943,12 +933,6 @@ d-appendix a:hover, d-appendix a.footnote-backlink:hover {
   background: linear-gradient(180deg, rgba(var(--c), 0.9), rgba(var(--c), 0.55));
 }
 
-@media (prefers-color-scheme: dark) {
-  .badge-flag {
-    background: #0f1114;
-    color: #e6edf3;
-  }
-}
 /* —— 分类颜色映射 —— */
 .badge[data-conf=publication],
 .badge--fill[data-conf=publication],
@@ -1032,15 +1016,6 @@ ol.bibliography .badge:empty {
 }
 
 /* 深色模式下，出版物标签的底色与文本也适配 */
-@media (prefers-color-scheme: dark) {
-  .selected-publications .badge,
-  .publications .badge,
-  ol.bibliography .badge {
-    background: #0f1114 !important;
-    color: #e6edf3 !important;
-    border-color: rgba(var(--c), 0.35) !important;
-  }
-}
 /* === News 可滚动容器（美观版） === */
 .news-scroll {
   /* 高度可通过行内变量覆盖：style="--news-height: 420px" */
@@ -1111,22 +1086,6 @@ ol.bibliography .badge:empty {
 @media (max-width: 576px) {
   .news-scroll {
     max-height: 55vh;
-  }
-}
-/* 深色模式适配 */
-@media (prefers-color-scheme: dark) {
-  .news-scroll {
-    background: #0f1114;
-    border-color: rgba(255, 255, 255, 0.08);
-  }
-  .news-scroll::before {
-    background: linear-gradient(to bottom, #0f1114, rgba(15, 17, 20, 0));
-  }
-  .news-scroll::after {
-    background: linear-gradient(to top, #0f1114, rgba(15, 17, 20, 0));
-  }
-  .news-scroll {
-    scrollbar-color: rgba(21, 153, 87, 0.55) transparent;
   }
 }
 /* === 让 News 框更高（桌面端） === */
