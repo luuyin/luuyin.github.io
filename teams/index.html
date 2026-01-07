@@ -67,13 +67,10 @@
 
               <!-- Other pages -->
               <li class="nav-item ">
-                <a class="nav-link" href="/cv/">CV</a>
-              </li>
-              <li class="nav-item ">
                 <a class="nav-link" href="/publications/">Publications</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="/teams/">LUMI Lab<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/teams/">Teams<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="/teaching/">Teaching</a>
@@ -95,68 +92,366 @@
           </header>
 
           <article>
-            
-<!-- ### PhD Students -->
+            <style>
+/* ===== 高级简约：轻量审美升级，不改变布局结构 ===== */
+.team-page{
+  --accent: var(--global-theme-color, #159957);
+  --title: rgba(17,17,17,.88);
+  --text: rgba(17,17,17,.62);
+  --line: rgba(0,0,0,.10);
+}
+
+/* 分组标题：书卷气 + 细线分隔（保留原来清爽感） */
+.team-page .team-section-title{
+  font-family: "Roboto Slab", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.30rem;
+  letter-spacing: .2px;
+  color: var(--title);
+  margin: 2.0rem 0 1.05rem;
+}
+.team-page .team-section-title::after{
+  content:"";
+  display:block;
+  margin-top: .55rem;
+  height: 1px;
+  width: 100%;
+  background: var(--line);
+}
+
+/* 名字：去掉粗黑（更优雅） */
+.team-page .team-name{
+  font-family: "Roboto Slab", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-weight: 500;
+  color: rgba(17,17,17,.84);
+  font-size: 1.12rem;
+  letter-spacing: .12px;
+}
+
+/* intro：更轻更干净 */
+.team-page .team-intro{
+  color: var(--text);
+  font-size: .93rem;
+  line-height: 1.45;
+  margin-bottom: .65rem;
+}
+
+/* 头像：轻边框 + 轻阴影 */
+.team-page .team-avatar{
+  border: 2px solid rgba(0,0,0,.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.team-page .team-avatar:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.08);
+}
+
+/* ================================
+   关键：高级按钮（不再用 Bootstrap 的 btn）
+   ================================ */
+.team-page a.team-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: .52rem 1.10rem;
+  min-width: 136px;
+
+  border-radius: 12px;
+
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 10px 22px rgba(0,0,0,.06);
+
+  color: rgba(17,17,17,.70);
+  font-size: .74rem;
+  font-weight: 600;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease, color .12s ease, background-color .12s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.team-page a.team-btn:hover{
+  transform: translateY(-1px);
+  border-color: rgba(21,153,87,.22);
+  color: var(--accent);
+  background: rgba(21,153,87,.06);
+  box-shadow: 0 14px 28px rgba(0,0,0,.08);
+}
+
+.team-page a.team-btn:active{
+  transform: translateY(0);
+  box-shadow: 0 10px 22px rgba(0,0,0,.06);
+}
+
+.team-page a.team-btn:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 .18rem rgba(21,153,87,.18), 0 10px 22px rgba(0,0,0,.06);
+}
+
+/* 深色系统：只调颜色，风格不变 */
+@media (prefers-color-scheme: dark){
+  .team-page{
+    --title: rgba(230,237,243,.92);
+    --text: rgba(230,237,243,.65);
+    --line: rgba(255,255,255,.12);
+  }
+  .team-page .team-name{ color: rgba(230,237,243,.88); }
+  .team-page .team-avatar{
+    border-color: rgba(255,255,255,.10);
+    box-shadow: 0 8px 24px rgba(0,0,0,.35);
+  }
+  .team-page a.team-btn{
+    background: rgba(15,17,20,.92);
+    border-color: rgba(255,255,255,.10);
+    color: rgba(230,237,243,.72);
+    box-shadow: 0 12px 26px rgba(0,0,0,.40);
+  }
+  .team-page a.team-btn:hover{
+    background: rgba(21,153,87,.12);
+    border-color: rgba(155,231,196,.22);
+    color: rgba(155,231,196,.95);
+  }
+}
+</style>
+
+<div class="team-page">
+
+
+
+
+
+
+
+<h2 class="team-section-title">Principal Investigator</h2>
+
+
+<div class="row justify-content-start mt-3 mb-5">
+
+
+  
+  <div class="col-lg-4 col-md-6 col-sm-10 mb-5 text-center">
+    <img src="/assets/img/team/Lu%20Yin.jpg" alt="Lu Yin" class="team-avatar mb-3">
+    <h5 class="team-name mb-1">Lu Yin</h5>
+
+    
+    <p class="team-intro">
+      Assistant Professor
+    </p>
+    
+
+    
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+<h2 class="team-section-title">Current PhD Students</h2>
+
+
 <div class="row justify-content-center mt-3 mb-5">
+
+
   
   <div class="col-lg-4 col-md-6 col-sm-10 mb-5 text-center">
     <img src="/assets/img/team/Adarsh%20Kappiyath.jpg" alt="Adarsh Kappiyath" class="team-avatar mb-3">
-    <h5 class="font-weight-bold mb-1">Adarsh Kappiyath</h5>
-    <p class="small text-muted">PhD 2024 -</p>
-    <a href="https://kadarsh22.github.io/" target="_blank" class="btn btn-sm team-btn" rel="noopener noreferrer">Homepage</a>
+    <h5 class="team-name mb-1">Adarsh Kappiyath</h5>
+
+    
+    <p class="team-intro">
+      PhD 2024 -
+    </p>
+    
+
+    
+    <a href="https://kadarsh22.github.io/" target="_blank" rel="noopener noreferrer noopener noreferrer" class="team-btn">Homepage</a>
+    
   </div>
   
   <div class="col-lg-4 col-md-6 col-sm-10 mb-5 text-center">
     <img src="/assets/img/team/Mingyu%20Cao.jpeg" alt="Mingyu Cao" class="team-avatar mb-3">
-    <h5 class="font-weight-bold mb-1">Mingyu Cao</h5>
-    <p class="small text-muted">PhD 2025 -</p>
-    <a href="https://scholar.google.com/citations?user=nq7uHwQAAAAJ&amp;hl" target="_blank" class="btn btn-sm team-btn" rel="noopener noreferrer">Homepage</a>
+    <h5 class="team-name mb-1">Mingyu Cao</h5>
+
+    
+    <p class="team-intro">
+      PhD 2025 -
+    </p>
+    
+
+    
+    <a href="https://scholar.google.com/citations?user=nq7uHwQAAAAJ&amp;hl" target="_blank" rel="noopener noreferrer noopener noreferrer" class="team-btn">Homepage</a>
+    
   </div>
   
   <div class="col-lg-4 col-md-6 col-sm-10 mb-5 text-center">
     <img src="/assets/img/team/Handa%20Li.jpg" alt="Handa Li" class="team-avatar mb-3">
-    <h5 class="font-weight-bold mb-1">Handa Li</h5>
-    <p class="small text-muted">PhD 2025 -</p>
-    <a href="" target="_blank" class="btn btn-sm team-btn">Homepage</a>
+    <h5 class="team-name mb-1">Handa Li</h5>
+
+    
+    <p class="team-intro">
+      PhD 2025 -
+    </p>
+    
+
+    
   </div>
   
   <div class="col-lg-4 col-md-6 col-sm-10 mb-5 text-center">
     <img src="/assets/img/team/Xiaolong%20Han.jpeg" alt="Xiaolong Han" class="team-avatar mb-3">
-    <h5 class="font-weight-bold mb-1">Xiaolong Han</h5>
-    <p class="small text-muted">PhD 2025 –<br> Co-supervised with <a href="https://www.surrey.ac.uk/people/ferrante-neri" target="_blank" rel="noopener noreferrer">Ferrante Neri</a></p>
-    <a href="https://scholar.google.com/citations?user=5oaBR_0AAAAJ&amp;hl" target="_blank" class="btn btn-sm team-btn" rel="noopener noreferrer">Homepage</a>
+    <h5 class="team-name mb-1">Xiaolong Han</h5>
+
+    
+    <p class="team-intro">
+      PhD 2025 –<br>
+Co-supervised with <a href="https://www.surrey.ac.uk/people/ferrante-neri" target="_blank" rel="noopener noreferrer noopener noreferrer">Ferrante Neri</a>
+    </p>
+    
+
+    
+    <a href="https://scholar.google.com/citations?user=5oaBR_0AAAAJ&amp;hl" target="_blank" rel="noopener noreferrer noopener noreferrer" class="team-btn">Homepage</a>
+    
   </div>
   
   <div class="col-lg-4 col-md-6 col-sm-10 mb-5 text-center">
     <img src="/assets/img/team/Vishal%20Thengane.jpg" alt="Vishal Thengane" class="team-avatar mb-3">
-    <h5 class="font-weight-bold mb-1">Vishal Thengane</h5>
-    <p class="small text-muted">PhD 2024 –<br> Co-supervised with <a href="https://x-up-lab.github.io/" target="_blank" rel="noopener noreferrer">Xiatianzhu</a></p>
-    <a href="https://vgthengane.github.io/" target="_blank" class="btn btn-sm team-btn" rel="noopener noreferrer">Homepage</a>
+    <h5 class="team-name mb-1">Vishal Thengane</h5>
+
+    
+    <p class="team-intro">
+      PhD 2024 –<br>
+Co-supervised with <a href="https://x-up-lab.github.io/" target="_blank" rel="noopener noreferrer noopener noreferrer">Xiatianzhu</a>
+    </p>
+    
+
+    
+    <a href="https://vgthengane.github.io/" target="_blank" rel="noopener noreferrer noopener noreferrer" class="team-btn">Homepage</a>
+    
   </div>
   
   <div class="col-lg-4 col-md-6 col-sm-10 mb-5 text-center">
     <img src="/assets/img/team/Jiaxi%20Li.jpeg" alt="Jiaxi Li" class="team-avatar mb-3">
-    <h5 class="font-weight-bold mb-1">Jiaxi Li</h5>
-    <p class="small text-muted">PhD 2024 –<br>
-Co-supervised with <a href="https://scholar.google.com/citations?user=Xmlr1xQAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Xilu Wang</a>  
-</p>
-    <a href="https://scholar.google.com/citations?user=RqzHZVIAAAAJ&amp;hl" target="_blank" class="btn btn-sm team-btn" rel="noopener noreferrer">Homepage</a>
+    <h5 class="team-name mb-1">Jiaxi Li</h5>
+
+    
+    <p class="team-intro">
+      PhD 2024 –<br>
+Co-supervised with <a href="https://scholar.google.com/citations?user=Xmlr1xQAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer noopener noreferrer">Xilu Wang</a>
+    </p>
+    
+
+    
+    <a href="https://scholar.google.com/citations?user=RqzHZVIAAAAJ&amp;hl" target="_blank" rel="noopener noreferrer noopener noreferrer" class="team-btn">Homepage</a>
+    
   </div>
   
 </div>
 
-<!-- ### Visiting Scholar -->
+
+
+
+
+
+
+
+<h2 class="team-section-title">Research Interns</h2>
+
+
 <div class="row justify-content-center mt-3 mb-5">
+
+
   
   <div class="col-lg-4 col-md-6 col-sm-10 mb-5 text-center">
-    <img src="/assets/img/team/Handa%20Li.png" alt="Shaojie Zhuang" class="team-avatar mb-3">
-    <h5 class="font-weight-bold mb-1">Shaojie Zhuang</h5>
-    <p class="small text-muted">Visiting PhD from Shandong University</p>
-    <a href="" target="_blank" class="btn btn-sm team-btn">Homepage</a>
+    <img src="/assets/img/team/Pengxiang%20Li.jpeg" alt="Pengxiang Li" class="team-avatar mb-3">
+    <h5 class="team-name mb-1">Pengxiang Li</h5>
+
+    
+    <p class="team-intro">
+      PhD candidate at Hong Kong Polytechnic University
+    </p>
+    
+
+    
+    <a href="https://scholar.google.com/citations?user=rUp_4RgAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer noopener noreferrer" class="team-btn">Homepage</a>
+    
+  </div>
+  
+  <div class="col-lg-4 col-md-6 col-sm-10 mb-5 text-center">
+    <img src="/assets/img/team/Anonymous.png" alt="Xin Xu" class="team-avatar mb-3">
+    <h5 class="team-name mb-1">Xin Xu</h5>
+
+    
+    <p class="team-intro">
+      PhD candidate at The Hong Kong University of Science and Technology
+    </p>
+    
+
+    
+    <a href="https://xinxu-ustc.github.io/" target="_blank" rel="noopener noreferrer noopener noreferrer" class="team-btn">Homepage</a>
+    
+  </div>
+  
+  <div class="col-lg-4 col-md-6 col-sm-10 mb-5 text-center">
+    <img src="/assets/img/team/Anonymous.png" alt="Tianhao Chen" class="team-avatar mb-3">
+    <h5 class="team-name mb-1">Tianhao Chen</h5>
+
+    
+    <p class="team-intro">
+      PhD candidate at The Hong Kong University of Science and Technology
+    </p>
+    
+
+    
+    <a href="https://openreview.net/profile?id=~Tianhao_Chen3" target="_blank" rel="noopener noreferrer noopener noreferrer" class="team-btn">Homepage</a>
+    
   </div>
   
 </div>
 
+
+
+
+
+
+
+
+<h2 class="team-section-title">Visiting Scholars</h2>
+
+
+<div class="row justify-content-start mt-3 mb-5">
+
+
+  
+  <div class="col-lg-4 col-md-6 col-sm-10 mb-5 text-center">
+    <img src="/assets/img/team/Anonymous.png" alt="Shaojie Zhuang" class="team-avatar mb-3">
+    <h5 class="team-name mb-1">Shaojie Zhuang</h5>
+
+    
+    <p class="team-intro">
+      PhD candidate at Shandong University
+    </p>
+    
+
+    
+  </div>
+  
+</div>
+
+
+
+
+
+
+</div>
 
           </article>
 

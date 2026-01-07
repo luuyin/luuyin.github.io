@@ -1122,4 +1122,29 @@ ol.bibliography .badge:empty {
   box-shadow: none !important;
 }
 
+/* ===== Fix: About page profile image too large on mobile ===== */
+@media (max-width: 576px) {
+  /* 让右侧 profile 在手机上居中且不要占太宽 */
+  .post .profile {
+    float: none !important;
+    width: 100% !important;
+    max-width: 320px; /* 想更小就改 260/280 */
+    margin: 0 auto 1.25rem !important;
+    text-align: center;
+  }
+  /* 关键：限制高度，避免“纵向长图”在手机上变成巨幅 */
+  .post .profile img {
+    display: inline-block;
+    width: auto !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 360px; /* 想更矮就改 280/320 */
+    object-fit: contain;
+  }
+  /* 你的 HTML 里是 <picture>，加一层保险 */
+  .post .profile picture {
+    display: block;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
