@@ -12,7 +12,7 @@
 .paper-link:hover { text-decoration-color: var(--accent); }
 
 /* =========================================================
-   Badges (outline+soft-fill): premium minimal + better funding/Honor
+   Badges (outline+soft-fill): premium minimal + better funding/activity
    保留：边框 + 淡底色（背景有颜色）
    变化：文字统一黑色
    ========================================================= */
@@ -43,7 +43,7 @@
   text-decoration: none;
 }
 
-/* ONLY uppercase the legend pills (Publication / Honor / Funding) */
+/* ONLY uppercase the legend pills (Publication / activity / Funding) */
 .news-legend .badge,
 .news-legend .badge--fill,
 .news-legend .badge-flag{
@@ -72,15 +72,15 @@
 .badge-flag[data-conf="publication"] { --c: 19,138,78; }   /* #138A4E */
 
 /* funding：深青 teal */
-.badge[data-conf="Grant"],
-.badge--fill[data-conf="Grant"],
-.badge-flag[data-conf="Grant"]   { --c: 0,0,0; }      /* #0E7490 */
+.badge[data-conf="grant"],
+.badge--fill[data-conf="grant"],
+.badge-flag[data-conf="grant"]   { --c: 0,0,0; }      /* #0E7490 */
 
-/* Honor：琥珀 amber */
-.badge[data-conf="Honor"],
-.badge--fill[data-conf="Honor"],
-.badge-flag[data-conf="Honor"] { --c: 180,83,9; }   /* #B45309 */
-// .badge-flag[data-conf="Honor"]  { --c: 0,116,266; }    /* #B45309 */
+/* activity：琥珀 amber */
+.badge[data-conf="activity"],
+.badge--fill[data-conf="activity"],
+.badge-flag[data-conf="activity"] { --c: 180,83,9; }   /* #B45309 */
+// .badge-flag[data-conf="activity"]  { --c: 0,116,266; }    /* #B45309 */
 
 /* —— News legend：小一点，更精致 —— */
 .news-legend .badge,
