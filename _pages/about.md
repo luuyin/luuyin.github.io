@@ -22,7 +22,7 @@ Greetings! I'm Lu, an Assistant Professor in the School of Computer Science and 
 
 Previously, I served as a Postdoctoral Fellow at [TU/e](https://www.tue.nl/en/) and worked as a research scientist intern at Google's New York City office.
 
-I lead the Lightweight & Universal Machine Intelligence (LUMI) lab. My research interests include:
+I was selected as a [CPAL 2026 Rising Star](https://cpal.cc/). I lead the Lightweight & Universal Machine Intelligence (LUMI) lab. My research interests include:
 - Efficient and Scalable Foundation Models
 - Understanding and Enhancing LLMs  
 - Interdisciplinary AI Applications
