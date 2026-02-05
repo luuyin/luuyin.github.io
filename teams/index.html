@@ -66,14 +66,14 @@
               
 
               <!-- Other pages -->
-              <li class="nav-item ">
-                <a class="nav-link" href="/cv/">CV</a>
+              <li class="nav-item active">
+                <a class="nav-link" href="/teams/">LUMI Lab<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="/publications/">Publications</a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="/teams/">Teams<span class="sr-only">(current)</span></a>
+              <li class="nav-item ">
+                <a class="nav-link" href="/cv/">CV</a>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="/teaching/">Teaching</a>
@@ -89,13 +89,48 @@
       <!-- page.html -->
         <div class="post">
 
-          <header class="post-header">
+          <!-- <header class="post-header">
             <h1 class="post-title">LUMI Lab</h1>
             <p class="post-description"></p>
-          </header>
+          </header> -->
 
           <article>
             <style>
+/* ✅ 1) 只在本页隐藏 page.html 自动渲染的顶部标题区 */
+.post .post-header{
+  display: none !important;
+}
+
+/* ===== 顶部艺术图：hero banner（推荐做法） ===== */
+.team-page .team-hero{
+  margin: .25rem 0 2.9rem;   /* ✅ 跟下面标题拉开一点（你也可调成 2.6rem） */
+}
+.team-page .team-hero img{
+  width: 90%;                 /* ✅ 关键：不要 100%，会显得太大 */
+  max-width: 980px;           /* ✅ 防止超大屏幕仍然太宽 */
+  height: auto;
+  display: block;
+  margin: 0 auto;             /* ✅ 居中 */
+
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.06);
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(0,0,0,.06);
+}
+
+@media (max-width: 576px){
+  .team-page .team-hero{ margin: .15rem 0 1.25rem; }
+  .team-page .team-hero img{ border-radius: 12px; }
+}
+
+@media (prefers-color-scheme: dark){
+  .team-page .team-hero img{
+    border-color: rgba(255,255,255,.10);
+    background: rgba(15,17,20,.92);
+    box-shadow: 0 14px 34px rgba(0,0,0,.35);
+  }
+}
+
 /* ===== 高级简约：轻量审美升级，不改变布局结构 ===== */
 .team-page{
   --accent: var(--global-theme-color, #159957);
@@ -113,6 +148,7 @@
   color: var(--title);
   margin: 2.0rem 0 1.05rem;
 }
+
 .team-page .team-section-title::after{
   content:"";
   display:block;
@@ -224,6 +260,11 @@
 
 <div class="team-page">
 
+  <!-- ✅ 顶部艺术图（把图片放到 /assets/img/team/lumi-hero.png 或你自己的路径） -->
+  <div class="team-hero">
+    <img src="/assets/img/team/lumi-hero.png" alt="LUMI is short for 'luminous' — and our research should be, too." loading="eager">
+  </div>
+
 
 
 
@@ -251,8 +292,6 @@
   </div>
   
 </div>
-
-
 
 
 
@@ -364,8 +403,6 @@ Co-supervised with <a href="https://scholar.google.com/citations?user=Xmlr1xQAAA
 
 
 
-
-
 <h2 class="team-section-title">Research Interns</h2>
 
 
@@ -425,8 +462,6 @@ Co-supervised with <a href="https://scholar.google.com/citations?user=Xmlr1xQAAA
 
 
 
-
-
 <h2 class="team-section-title">Visiting Scholars</h2>
 
 
@@ -448,8 +483,6 @@ Co-supervised with <a href="https://scholar.google.com/citations?user=Xmlr1xQAAA
   </div>
   
 </div>
-
-
 
 
 

@@ -820,6 +820,18 @@ d-appendix a:hover, d-appendix a.footnote-backlink:hover {
   background: url("/assets/img/lumi_logo.png") no-repeat center/contain;
 }
 
+/* 让导航栏里的 LUMI Lab 变成斜体（仅此而已） */
+.navbar-nav .nav-item a[href="/teams/"] {
+  font-style: italic;
+}
+
+.navbar-nav .nav-item a[href="/teams/"] {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(21, 153, 87, 0.35);
+}
+
 /* === Custom: paper labels & links === */
 :root {
   --accent: var(--global-theme-color, #159957);
