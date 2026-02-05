@@ -2,7 +2,6 @@
 layout: about
 title: About
 permalink: /
-subtitle: <i> l.yin@surrey.ac.uk</i> ;<i> l.yin@tue.nl</i>
 
 profile:
   align: right
@@ -29,3 +28,7 @@ I was selected as a [CPAL 2026 Rising Star](https://cpal.cc/). I lead the Lightw
 
 Feel free to reach out if you'd like to discuss anything with me :)
 
+<span style="font-size:0.85em; opacity:0.85;">
+  <i>l.yin@surrey.ac.uk (preferred)</i><br>
+  <i>l.yin@tue.nl</i>; <i>lu.yin@tue.ellis.eu</i>
+</span>
