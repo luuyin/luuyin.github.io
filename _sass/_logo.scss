@@ -9,17 +9,14 @@
 }
 
 
-// /* ① 让链接变成行内 flex 盒，项目自然垂直居中 */
-// .navbar-nav .nav-item a[href="/teams/"] {
-//   display: inline-flex;          /* 替代默认 inline-block */
-//   align-items: center;           /* 垂直居中文字 + 图标 */
-// }
+/* 让导航栏里的 LUMI Lab 变成斜体（仅此而已） */
+.navbar-nav .nav-item a[href="/teams/"] {
+  font-style: italic;
+}
 
-// /* ② 调整伪元素尺寸 / 间距 */
-// .navbar-nav .nav-item a[href="/teams/"]::after {
-//   content: "";
-//   width: 18px;                   /* 你 logo 的实际直径 */
-//   height: 18px;
-//   margin-left: 6px;              /* 图标与文字的间距 */
-//   background: url("/assets/img/lumi_logo.svg") no-repeat center/contain;
-// }
+.navbar-nav .nav-item a[href="/teams/"] {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(21,153,87,.35);
+}

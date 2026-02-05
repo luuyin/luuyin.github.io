@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "LUMI Lab"     # 页面顶部大标题
-nav_title: "Teams"    # 导航栏显示
-nav_order: 3
+title: "LUMI Lab"          # 仍保留：用于导航/SEO（但页面顶部会被隐藏）
+nav_title: "LUMI Lab"      # 导航栏显示
+nav_order: 2
 nav: true
 permalink: /teams/
 
@@ -99,6 +99,41 @@ members:
 ---
 
 <style>
+/* ✅ 1) 只在本页隐藏 page.html 自动渲染的顶部标题区 */
+.post .post-header{
+  display: none !important;
+}
+
+/* ===== 顶部艺术图：hero banner（推荐做法） ===== */
+.team-page .team-hero{
+  margin: .25rem 0 2.9rem;   /* ✅ 跟下面标题拉开一点（你也可调成 2.6rem） */
+}
+.team-page .team-hero img{
+  width: 90%;                 /* ✅ 关键：不要 100%，会显得太大 */
+  max-width: 980px;           /* ✅ 防止超大屏幕仍然太宽 */
+  height: auto;
+  display: block;
+  margin: 0 auto;             /* ✅ 居中 */
+
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.06);
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(0,0,0,.06);
+}
+
+@media (max-width: 576px){
+  .team-page .team-hero{ margin: .15rem 0 1.25rem; }
+  .team-page .team-hero img{ border-radius: 12px; }
+}
+
+@media (prefers-color-scheme: dark){
+  .team-page .team-hero img{
+    border-color: rgba(255,255,255,.10);
+    background: rgba(15,17,20,.92);
+    box-shadow: 0 14px 34px rgba(0,0,0,.35);
+  }
+}
+
 /* ===== 高级简约：轻量审美升级，不改变布局结构 ===== */
 .team-page{
   --accent: var(--global-theme-color, #159957);
@@ -116,6 +151,7 @@ members:
   color: var(--title);
   margin: 2.0rem 0 1.05rem;
 }
+
 .team-page .team-section-title::after{
   content:"";
   display:block;
@@ -227,6 +263,15 @@ members:
 
 <div class="team-page">
 
+  <!-- ✅ 顶部艺术图（把图片放到 /assets/img/team/lumi-hero.png 或你自己的路径） -->
+  <div class="team-hero">
+    <img
+      src="{{ '/assets/img/team/lumi-hero.png' | relative_url }}"
+      alt="LUMI is short for 'luminous' — and our research should be, too."
+      loading="eager"
+    >
+  </div>
+
 {% comment %}
   按 group_sections 的顺序输出（不会按字母排序）
   保留原始布局：row + col + 圆头像 + 名字 + intro + 按钮
@@ -262,9 +307,7 @@ members:
   {% endfor %}
 </div>
 
-
 {% endif %}
-
 {% endfor %}
 
 </div>

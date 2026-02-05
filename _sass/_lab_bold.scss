@@ -1,0 +1,44 @@
+/* ===== Nav: emphasize Teams (LUMI Lab) only ===== */
+/* 只加粗指向 /teams/ 的导航链接（不影响其它导航项） */
+nav a[href="/teams/"],
+nav a[href$="/teams/"],
+nav a[href$="/teams/"],
+.navbar a[href="/teams/"],
+.navbar a[href$="/teams/"],
+.site-nav a[href="/teams/"],
+.site-nav a[href$="/teams/"]{
+  font-weight: 700 !important;            /* 更稳重 */
+  letter-spacing: .02em;                  /* 轻微字距，显得更“精致” */
+  position: relative;                     /* 为下面的下划线做准备 */
+}
+
+/* 轻量的强调线（比纯粗体更“好看”，但不会抢戏） */
+nav a[href="/teams/"]::after,
+nav a[href$="/teams/"]::after,
+.navbar a[href="/teams/"]::after,
+.navbar a[href$="/teams/"]::after,
+.site-nav a[href="/teams/"]::after,
+.site-nav a[href$="/teams/"]::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.35rem;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--global-theme-color, #159957);
+  opacity: .22;
+  transform: scaleX(.78);
+  transform-origin: center;
+  transition: opacity .15s ease, transform .15s ease;
+}
+
+nav a[href="/teams/"]:hover::after,
+nav a[href$="/teams/"]:hover::after,
+.navbar a[href="/teams/"]:hover::after,
+.navbar a[href$="/teams/"]:hover::after,
+.site-nav a[href="/teams/"]:hover::after,
+.site-nav a[href$="/teams/"]:hover::after{
+  opacity: .45;
+  transform: scaleX(1);
+}
