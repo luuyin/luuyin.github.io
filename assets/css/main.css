@@ -1127,5 +1127,9 @@ ol.bibliography .badge:empty {
     display: block;
   }
 }
+/* MapMyVisitors: compact, elegant size */
+.mmv-wrap {
+  display: none;
+}
 
 /*# sourceMappingURL=main.css.map */
