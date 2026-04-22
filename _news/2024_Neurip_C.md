@@ -6,4 +6,4 @@ inline: true
 
 
 
-<span class="badge-flag" data-conf="activity">Activities</span> [ACTIVITY] NeurIPS'24 challenge co-organized - [Edge-Device Large Language Model Competition](https://edge-llms-challenge.github.io/edge-llm-challenge.github.io/).
+<span class="badge-flag" data-conf="activity">Activities</span> NeurIPS'24 challenge co-organized - [Edge-Device Large Language Model Competition](https://edge-llms-challenge.github.io/edge-llm-challenge.github.io/).
