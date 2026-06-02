@@ -1132,4 +1132,20 @@ ol.bibliography .badge:empty {
   display: none;
 }
 
+/* ===== Compact section headings (Service / Activities / Teaching) ===== */
+.section-heading {
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--global-theme-color);
+  margin: 1.6rem 0 0.7rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.section-heading:first-of-type {
+  margin-top: 0.4rem;
+}
+
 /*# sourceMappingURL=main.css.map */
