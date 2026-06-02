@@ -272,15 +272,84 @@ ol.bibliography .badge:empty { display: none !important; }
 
 /* MapMyVisitors: compact, elegant size */
 .mmv-wrap{ display:none; }
-/* ===== Compact section headings (Service / Activities / Teaching) ===== */
+/* ===== Service / Activities page design ===== */
+
+/* Section labels: match the site's own typography — clean, normal case */
 .section-heading {
   font-family: inherit;
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 600;
-  letter-spacing: .01em;
-  color: var(--global-theme-color);
-  margin: 1.6rem 0 .7rem;
-  padding-bottom: .3rem;
-  border-bottom: 1px solid var(--global-divider-color);
+  text-transform: none;
+  letter-spacing: 0;
+  color: #3c4043;
+  margin: 2.4rem 0 .8rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, .06);
 }
-.section-heading:first-of-type { margin-top: .4rem; }
+html[data-theme='dark'] .section-heading {
+  color: var(--global-text-color);
+  border-bottom-color: rgba(255, 255, 255, .08);
+}
+.section-heading:first-of-type { margin-top: .6rem; }
+
+/* Lists under each section */
+.section-heading + ul {
+  margin: 0 0 .3rem;
+  padding-left: 1.1rem;
+  list-style: none;
+}
+.section-heading + ul > li {
+  position: relative;
+  line-height: 1.55;
+  margin-bottom: .4rem;
+  font-size: .95rem;
+}
+/* custom soft bullet (plain lists: Associate Editor, Organizational) */
+.section-heading + ul > li::before {
+  content: "";
+  position: absolute;
+  left: -1.05rem;
+  top: .58em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--global-divider-color);
+}
+/* year / role lead-in: muted so it supports rather than shouts */
+.section-heading + ul > li > strong:first-child {
+  color: var(--global-text-color-light);
+  font-weight: 600;
+}
+/* links: subtle, underline on hover only */
+.section-heading + ul a {
+  color: var(--global-theme-color);
+  text-decoration: none;
+}
+.section-heading + ul a:hover { text-decoration: underline; }
+
+/* Year-gutter lists: year aligned in a fixed left column, description hangs */
+.section-heading + ul.entry-list { padding-left: 0; }
+.section-heading + ul.entry-list > li {
+  padding-left: 3.6rem;
+}
+.section-heading + ul.entry-list > li::before { display: none; }
+.section-heading + ul.entry-list > li > strong:first-child {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3.2rem;
+}
+
+/* Two-column lists for short flat enumerations (Journal Invited Reviewer) */
+.section-heading + ul.cols-2 {
+  columns: 2;
+  column-gap: 2.5rem;
+  padding-left: 1.1rem;
+}
+.section-heading + ul.cols-2 > li { break-inside: avoid; }
+@media (max-width: 576px) {
+  .section-heading + ul.cols-2 { columns: 1; }
+}
+
+/* Gold emphasis for marquee honours (Best Paper, Rising Star) */
+.gold-award { color: #AF741F; font-weight: 600; }

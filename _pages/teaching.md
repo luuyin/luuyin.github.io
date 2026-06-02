@@ -3,26 +3,26 @@ layout: page_notitile
 permalink: /teaching/
 title: Teaching
 nav: true
-nav_order: 5
+nav_order: 6
 ---
 
 
 <h3>Teaching</h3>
 <br>
 
-- **2020**, *Teaching Assistant for Deep Learning (2AMM10) at TU/e*, ([Tutorials and Practicals](https://github.com/luuyin/TU-e-deeplearning-2020))
+- **2020**, Teaching Assistant for Deep Learning (2AMM10) at TU/e, ([Tutorials and Practicals](https://github.com/luuyin/TU-e-deeplearning-2020))
 
-- **2021**, *Teaching Assistant for Deep Learning (2AMM10) at TU/e, 2021*, ([Tutorials and Practicals](https://github.com/luuyin/TU-e-deeplearning-2021))
+- **2021**, Teaching Assistant for Deep Learning (2AMM10) at TU/e, 2021, ([Tutorials and Practicals](https://github.com/luuyin/TU-e-deeplearning-2021))
 
-- **2022**, *Teaching Assistant for Deep Learning (2AMM10) at TU/e, 2022*, ([Tutorials and Practicals](https://github.com/luuyin/TU-e-deeplearning-2022))
+- **2022**, Teaching Assistant for Deep Learning (2AMM10) at TU/e, 2022, ([Tutorials and Practicals](https://github.com/luuyin/TU-e-deeplearning-2022))
 
-- **2025**, *Practical Business Analytics (COM3018), University of Surrey*,
+- **2025**, Practical Business Analytics (COM3018), University of Surrey
 
-- **2025**, *Deep Learning at Advanced AI (COM3025), University of Surrey*, 
+- **2025**, Deep Learning at Advanced AI (COM3025), University of Surrey
 
-- **2026**, *Deep Learning At Advanced AI (COM3025), University of Surrey*,
+- **2026**, Deep Learning At Advanced AI (COM3025), University of Surrey
 
-- **2026**, *Business Analytics With Data Visualisation (COMM074), University of Surrey*,
+- **2026**, Business Analytics With Data Visualisation (COMM074), University of Surrey
 
 
 

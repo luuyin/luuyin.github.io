@@ -3,32 +3,43 @@ layout: page_notitile
 permalink: /service/
 title: Service
 nav: true
-nav_order: 6
+nav_order: 4
 ---
 
 
-<h3 class="section-heading">Area Chair / Senior Program Committee</h3>
+<h3 class="section-heading">Associate Editor</h3>
 
-- **Area Chair**, *NeurIPS 2026*
-- **Area Chair**, *CPAL 2026* (Conference on Parsimony and Learning)
+- Visual Intelligence ([Link](https://link.springer.com/journal/44267))
 
-<h3 class="section-heading">Organizing Committee</h3>
+<h3 class="section-heading">Senior Program Committee</h3>
 
-- **Publicity Chair**, *International Conference on Artificial Intelligence and Agents (ICAIAgent 2026)*
-- **Co-organizer**, *Edge-Device Large Language Model Competition*, NeurIPS 2024 Challenge ([website](https://edge-llms-challenge.github.io/edge-llm-challenge.github.io/))
-- **Co-organizer**, *Workshop on Stable Pretraining Paradigms for LLMs*, CAI 2025 ([website](https://stable-pretraining-paradigms-for-llms.github.io/stable-pretraining-paradigms-for-llms-workshop.github.io/index))
-- **Co-organizer**, *Workshop on Fairness-aware Federated Optimization and Learning*, CAI 2025 ([website](https://xw00616.github.io/Fairness-aware-Federated-Optimization-and-Learning/index))
+- **2026** ICPR (International Conference on Pattern Recognition)
+- **2026** NeurIPS (Conference on Neural Information Processing Systems)
+- **2025** CPAL (Conference on Parsimony and Learning)
+{:.entry-list}
 
-<!-- 请确认/增删下面的审稿会议；这是根据你发表过的会议推断的初稿。 -->
-<h3 class="section-heading">Conference Reviewer / Program Committee</h3>
+<h3 class="section-heading">Program Committee / Reviewer</h3>
 
-- **Machine Learning**: NeurIPS, ICML, ICLR, AAAI, UAI, ECML-PKDD, LoG, CPAL
-- **Computer Vision**: CVPR, BMVC
-- **NLP / Speech**: ACL, EMNLP, NAACL, Interspeech, ICASSP
+- **2026** ICML, NeurIPS
+- **2025** CPAL, ICLR, CVPR, BMVC, NeurIPS
+- **2024** NeurIPS, UAI, ICML, CPAL
+- **2023** NeurIPS, UAI, ICLR, SNN Workshop
+{:.entry-list}
 
-<!-- 如果你有期刊审稿经历，按下面格式补充；没有可整段删除。 -->
-<h3 class="section-heading">Journal Reviewer</h3>
+<h3 class="section-heading">Journal Invited Reviewer</h3>
 
-- *Transactions on Machine Learning Research (TMLR)*
+- ACM Computing Surveys
+- IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
+- Neurocomputing
+- IEEE Signal Processing Letters
+- Clinical Epidemiology
+{:.cols-2}
+
+<h3 class="section-heading">Organizational Contributions</h3>
+
+- **Publicity Chair**, International Conference on Artificial Intelligence and Agents ([Link](https://www.icaiagent.org/))
+- NeurIPS 2024 Challenge: Edge-Device Large Language Model Competition ([Link](https://edge-llms-challenge.github.io/edge-llm-challenge.github.io/))
+- IEEE CAI 2025 Workshop: Stable Training Paradigms for LLMs — Reducing Instability, Increasing Capacity ([Link](https://stable-pretraining-paradigms-for-llms.github.io/stable-pretraining-paradigms-for-llms-workshop.github.io/index))
+- IEEE CAI 2025 Workshop: Secure, Private, and Fair Federated Optimization and Learning ([Link](https://xw00616.github.io/Fairness-aware-Federated-Optimization-and-Learning/index))
 
 <br>
