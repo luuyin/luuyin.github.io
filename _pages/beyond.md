@@ -27,9 +27,6 @@ photos:
   - image: /assets/photos/2025-paris-2.jpg
     location: "Paris, France"
     date: "2025"
-  - image: /assets/photos/2025-tallinn.jpg
-    location: "Tallinn, Estonia"
-    date: "2025"
   - image: /assets/photos/2025-denmark.jpg
     location: "Denmark"
     date: "2025"
