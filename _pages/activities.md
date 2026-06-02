@@ -2,7 +2,7 @@
 layout: page_notitile
 permalink: /activities/
 title: Activities
-nav: true
+nav: false
 nav_order: 5
 ---
 
