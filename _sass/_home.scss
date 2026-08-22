@@ -1,0 +1,453 @@
+/*******************************************************************************
+ * Home page — hero, research, join-us, news, publications
+ * (loaded last so it can refine earlier rules)
+ ******************************************************************************/
+
+:root {
+  --home-ink:         #14171c;
+  --home-ink-soft:    #4a5361;
+  --home-ink-faint:   #7c8794;
+  --home-rule:        rgba(15, 23, 42, .10);
+  --home-rule-soft:   rgba(15, 23, 42, .06);
+  --home-accent:      #0f8a4d;
+  --home-accent-deep: #0b6b3c;
+  --home-accent-tint: rgba(15, 138, 77, .09);
+  --home-serif:       "Roboto Slab", Georgia, "Times New Roman", serif;
+}
+
+/* The about layout renders its own hero, so drop al-folio's page title block */
+.home .post-header { display: none; }
+
+/* =============================================================
+   Hero
+   ============================================================= */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 230px;
+  column-gap: 2.8rem;
+  align-items: start;
+  margin: .25rem 0 .5rem;
+}
+
+.hero-name {
+  font-family: var(--home-serif);
+  font-size: clamp(2.05rem, 4.4vw, 2.85rem);
+  font-weight: 700;
+  letter-spacing: -.022em;
+  line-height: 1.08;
+  margin: 0 0 .55rem;
+  color: var(--home-ink);
+}
+.hero-name .hero-name-cn {
+  font-size: .5em;
+  font-weight: 400;
+  letter-spacing: .04em;
+  color: var(--home-ink-faint);
+  margin-left: .55rem;
+  vertical-align: .16em;
+}
+
+.hero-role {
+  font-size: 1.04rem;
+  line-height: 1.55;
+  color: var(--home-ink-soft);
+  margin: 0 0 1rem;
+}
+.hero-role strong {
+  color: var(--home-ink);
+  font-weight: 600;
+}
+.hero-role a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(15, 138, 77, .35); }
+.hero-role a:hover { color: var(--home-accent-deep); border-bottom-color: var(--home-accent); text-decoration: none; }
+
+/* Affiliation list */
+.hero-affil {
+  list-style: none;
+  margin: 0 0 1.15rem;
+  padding: 0;
+  font-size: .925rem;
+  line-height: 1.6;
+  color: var(--home-ink-soft);
+}
+.hero-affil li {
+  position: relative;
+  padding-left: 1.05rem;
+  margin-bottom: .18rem;
+}
+.hero-affil li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--home-accent);
+  opacity: .5;
+}
+.hero-affil a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--home-rule); }
+.hero-affil a:hover { color: var(--home-accent-deep); border-bottom-color: var(--home-accent); text-decoration: none; }
+
+/* Highlight ribbon (award / news you want above the fold) */
+.hero-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .3rem .7rem;
+  margin: 0 0 1.05rem;
+  border-radius: 999px;
+  background: var(--home-accent-tint);
+  border: 1px solid rgba(15, 138, 77, .2);
+  font-size: .84rem;
+  font-weight: 600;
+  color: var(--home-accent-deep);
+  letter-spacing: .005em;
+}
+.hero-flag i { font-size: .82em; opacity: .85; }
+.hero-flag a { color: inherit; text-decoration: underline; text-underline-offset: .15em; }
+
+/* Email + social row */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+}
+.hero-mail {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  height: 36px;
+  padding: 0 .9rem;
+  border-radius: 10px;
+  background: var(--home-accent-tint);
+  border: 1px solid rgba(15, 138, 77, .22);
+  color: var(--home-accent-deep) !important;
+  font-size: .875rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+.hero-mail:hover {
+  background: rgba(15, 138, 77, .15);
+  border-color: rgba(15, 138, 77, .38);
+  transform: translateY(-1px);
+}
+
+.hero-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+.hero-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--home-rule);
+  color: var(--home-ink-soft) !important;
+  font-size: 1rem;
+  text-decoration: none !important;
+  transition: all .18s ease;
+}
+.hero-icons a i::before { color: inherit; }
+/* the mail chip already covers email */
+.hero-icons a[href^="mailto"] { display: none; }
+.hero-icons a:hover {
+  color: #fff !important;
+  background: var(--home-accent);
+  border-color: var(--home-accent);
+  transform: translateY(-1px);
+}
+
+/* Secondary email lines */
+.hero-mail-alt {
+  margin: .7rem 0 0;
+  font-size: .82rem;
+  color: var(--home-ink-faint);
+  line-height: 1.5;
+}
+
+/* Portrait */
+.hero-figure { margin: .35rem 0 0; }
+.hero-figure figure { margin: 0; }
+.hero-figure img {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, .06),
+    0 14px 30px -16px rgba(15, 23, 42, .35);
+}
+
+@media (max-width: 720px) {
+  .hero {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+  }
+  .hero-figure {
+    order: -1;
+    justify-self: center;
+    width: 100%;
+    max-width: 210px;
+    margin: 0;
+  }
+  .hero-name { text-align: left; }
+}
+
+/* =============================================================
+   Section scaffolding
+   ============================================================= */
+
+.home-section { margin-top: 2.9rem; }
+
+.home-section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0 0 1.15rem;
+  padding-bottom: .55rem;
+  border-bottom: 1px solid var(--home-rule);
+}
+.home-section-title {
+  font-family: var(--home-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -.012em;
+  margin: 0;
+  color: var(--home-ink);
+}
+.home-section-title:hover { text-decoration: none; }
+.home-section-note {
+  font-size: .8rem;
+  color: var(--home-ink-faint);
+}
+.home-section-note a { color: var(--home-accent-deep); }
+
+/* Body copy inside the intro */
+.home-bio {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--home-ink-soft);
+}
+.home-bio p { color: inherit; }
+.home-bio p:last-child { margin-bottom: 0; }
+.home-bio strong { color: var(--home-ink); }
+
+/* =============================================================
+   Research areas (01 / 02 / 03 …)
+   ============================================================= */
+
+.research-list {
+  display: grid;
+  gap: 0;
+}
+.research-item {
+  display: grid;
+  grid-template-columns: 3.2rem minmax(0, 1fr);
+  column-gap: .55rem;
+  padding: 1.05rem .6rem 1.05rem .35rem;
+  border-bottom: 1px solid var(--home-rule-soft);
+  border-radius: 10px;
+  transition: background .2s ease;
+}
+.research-item:last-child { border-bottom: 0; }
+.research-item:hover { background: rgba(15, 138, 77, .035); }
+
+.research-num {
+  font-family: var(--home-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: rgba(15, 138, 77, .42);
+  letter-spacing: .02em;
+}
+.research-title {
+  font-size: 1.015rem;
+  font-weight: 600;
+  line-height: 1.45;
+  margin: 0 0 .3rem;
+  color: var(--home-ink);
+}
+.research-text {
+  margin: 0;
+  font-size: .935rem;
+  line-height: 1.65;
+  color: var(--home-ink-soft);
+}
+.research-text a { color: var(--home-accent-deep); }
+
+/* representative papers for an area */
+.research-papers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  margin-top: .55rem;
+}
+.research-papers a {
+  display: inline-flex;
+  align-items: center;
+  padding: .16rem .55rem;
+  border-radius: 6px;
+  border: 1px solid var(--home-rule);
+  background: #fff;
+  font-size: .78rem;
+  font-weight: 500;
+  color: var(--home-ink-soft) !important;
+  text-decoration: none !important;
+  transition: all .16s ease;
+}
+.research-papers a:hover {
+  color: var(--home-accent-deep) !important;
+  border-color: rgba(15, 138, 77, .45);
+  background: var(--home-accent-tint);
+}
+
+@media (max-width: 576px) {
+  .research-item { grid-template-columns: 2.4rem minmax(0, 1fr); }
+}
+
+/* =============================================================
+   Join us
+   ============================================================= */
+
+.joinus {
+  border: 1px solid rgba(15, 138, 77, .22);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(15, 138, 77, .06), rgba(15, 138, 77, .015));
+  padding: 1.15rem 1.35rem;
+}
+.joinus p { margin: 0; font-size: .95rem; line-height: 1.7; color: var(--home-ink-soft); }
+.joinus p + p { margin-top: .6rem; }
+.joinus strong { color: var(--home-accent-deep); }
+.joinus ul {
+  list-style: none;
+  margin: .75rem 0;
+  padding: 0;
+}
+.joinus li {
+  position: relative;
+  padding-left: 1.05rem;
+  margin-bottom: .32rem;
+  font-size: .95rem;
+  line-height: 1.65;
+  color: var(--home-ink-soft);
+}
+.joinus li:last-child { margin-bottom: 0; }
+.joinus li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--home-accent);
+  opacity: .55;
+}
+.joinus a { color: var(--home-accent-deep); }
+
+/* =============================================================
+   News — lighter frame than before
+   ============================================================= */
+
+.news-header { margin: 0; }
+.news-legend { margin-top: 0; }
+
+.news-scroll {
+  height: 460px !important;
+  max-height: none !important;
+  border: 1px solid var(--home-rule-soft);
+  border-radius: 14px;
+  padding: .1rem 1rem .1rem .9rem;
+  background: #fff;
+}
+.news-scroll .timeline { margin: 1.1rem 0; }
+.news-scroll .news { margin: 0; }
+
+@media (max-width: 576px) {
+  .news-scroll {
+    height: 62vh !important;
+    padding: .1rem .55rem .1rem .5rem;
+  }
+  /* tighter date gutter so news text keeps its width */
+  .news-scroll .timeline {
+    --tl-date-width: 3.3rem;
+    --tl-gap: 1rem;
+  }
+  .news-scroll .tl-date { font-size: .78rem; }
+}
+
+/* =============================================================
+   Selected publications on the home page
+   ============================================================= */
+
+.home .publications { margin-top: 0; }
+.home .publications h2 { display: none; }  /* replaced by .home-section-head */
+
+.home ol.bibliography > li {
+  padding: .85rem 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--home-rule-soft);
+}
+.home ol.bibliography > li:last-child { border-bottom: 0; }
+.home ol.bibliography .title {
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--home-ink);
+}
+.home ol.bibliography .author {
+  font-size: .89rem;
+  line-height: 1.55;
+  color: var(--home-ink-soft);
+  margin-top: .15rem;
+}
+.home ol.bibliography .links { margin-top: .45rem; }
+.home ol.bibliography .links a.btn {
+  border-radius: 7px;
+  border-color: var(--home-rule);
+  color: var(--home-ink-soft);
+  font-size: .78rem;
+  padding: .18rem .7rem;
+  margin-right: .3rem;
+}
+.home ol.bibliography .links a.btn:hover {
+  color: var(--home-accent-deep);
+  border-color: rgba(15, 138, 77, .45);
+  background: var(--home-accent-tint);
+}
+
+/* =============================================================
+   Navbar polish (site-wide)
+   ============================================================= */
+
+.navbar {
+  border-bottom: 1px solid var(--home-rule-soft);
+  opacity: 1;
+  background-color: rgba(255, 255, 255, .88);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+}
+.navbar.navbar-light .navbar-brand.title {
+  font-family: var(--home-serif);
+  font-weight: 600 !important;
+  font-size: 1.02rem;
+  letter-spacing: -.01em;
+}
+.navbar.navbar-light .navbar-nav .nav-item .nav-link {
+  font-size: .93rem;
+  padding-left: .7rem;
+  padding-right: .7rem;
+  color: var(--home-ink-soft);
+  transition: color .16s ease;
+}
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
+  font-weight: 600;
+  color: var(--home-accent-deep);
+  box-shadow: inset 0 -2px 0 rgba(15, 138, 77, .55);
+}

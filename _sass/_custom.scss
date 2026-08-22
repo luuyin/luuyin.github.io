@@ -82,6 +82,26 @@
 .badge-flag[data-conf="activity"] { --c: 180,83,9; }   /* #B45309 */
 // .badge-flag[data-conf="activity"]  { --c: 0,116,266; }    /* #B45309 */
 
+/* —— 行内荣誉标记（Oral / Spotlight / Best Paper），用在 news 条目里 —— */
+.tag-oral{
+  display: inline-flex;
+  align-items: center;
+  margin: 0 .1rem 0 .28rem;
+  padding: .1rem .45rem;
+  border-radius: 5px;
+
+  font-size: .74em;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  line-height: 1.45;
+  vertical-align: .06em;
+
+  color: #8A5A13;
+  background: rgba(175,116,31,.13);
+  border: 1px solid rgba(175,116,31,.38);
+}
+
 /* —— News legend：小一点，更精致 —— */
 .news-legend .badge,
 .news-legend .badge--fill,
@@ -209,16 +229,7 @@ ol.bibliography .badge:empty { display: none !important; }
   .news-scroll{ max-height: 55vh; }
 }
 
-/* === 让 News 框更高（桌面端） === */
-.news-scroll { 
-  height: 800px !important;   /* 想更高就改成 680/720px */
-  max-height: none !important; /* 取消之前的 max-height 限制 */
-}
-
-/* 小屏高度（可选） */
-@media (max-width: 576px){
-  .news-scroll { height: 60vh !important; }  /* 保持移动端更灵活 */
-}
+/* News box height now lives in _home.scss (.news-scroll) */
 
 /* 关闭 News 标题在 hover 时的下划线/描边/阴影 */
 .news-title,
