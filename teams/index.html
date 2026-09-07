@@ -239,6 +239,39 @@
   box-shadow: 0 0 0 .18rem rgba(21,153,87,.18), 0 10px 22px rgba(0,0,0,.06);
 }
 
+/* ===== Alumni：简约文字列表（不用头像） ===== */
+.team-page .alumni-list{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 3rem;
+}
+.team-page .alumni-list li{
+  padding: .38rem 0;
+}
+
+.team-page .alumni-name{
+  font-family: "Roboto Slab", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.02rem;
+  color: rgba(17,17,17,.84);
+  text-decoration: none;
+}
+.team-page a.alumni-name:hover{ color: var(--accent); }
+
+.team-page .alumni-meta{
+  color: var(--text);
+  font-size: .90rem;
+  margin-left: .45rem;
+}
+
+@media (max-width: 576px){
+  .team-page .alumni-meta{
+    display: block;
+    margin-left: 0;
+    margin-top: .12rem;
+  }
+}
+
 /* 深色系统：只调颜色，风格不变 */
 @media (prefers-color-scheme: dark){
   .team-page{
@@ -247,6 +280,7 @@
     --line: rgba(255,255,255,.12);
   }
   .team-page .team-name{ color: rgba(230,237,243,.88); }
+  .team-page .alumni-name{ color: rgba(230,237,243,.88); }
   .team-page .team-avatar{
     border-color: rgba(255,255,255,.10);
     box-shadow: 0 8px 24px rgba(0,0,0,.35);
@@ -281,6 +315,8 @@
 <h2 class="team-section-title">Principal Investigator</h2>
 
 
+
+
 <div class="row justify-content-start mt-3 mb-5">
 
 
@@ -291,7 +327,7 @@
 
     
     <p class="team-intro">
-      Assistant Professor
+      Professor
     </p>
     
 
@@ -305,7 +341,10 @@
 
 
 
+
 <h2 class="team-section-title">Current PhD Students</h2>
+
+
 
 
 <div class="row justify-content-center mt-3 mb-5">
@@ -372,34 +411,32 @@ Co-supervised with <a href="https://www.surrey.ac.uk/people/ferrante-neri" targe
   </div>
   
   <div class="col-lg-4 col-md-6 col-sm-10 mb-5 text-center">
-    <img src="/assets/img/team/Vishal%20Thengane.jpg" alt="Vishal Thengane" class="team-avatar mb-3">
-    <h5 class="team-name mb-1">Vishal Thengane</h5>
+    <img src="/assets/img/team/Ziyang%20Chen.jpg" alt="Ziyang Chen" class="team-avatar mb-3">
+    <h5 class="team-name mb-1">Ziyang Chen</h5>
 
     
     <p class="team-intro">
-      PhD 2024 –<br>
-Co-supervised with <a href="https://x-up-lab.github.io/" target="_blank" rel="noopener noreferrer noopener noreferrer">Xiatianzhu</a>
+      PhD 2026 -
     </p>
     
 
     
-    <a href="https://vgthengane.github.io/" target="_blank" rel="noopener noreferrer noopener noreferrer" class="team-btn">Homepage</a>
+    <a href="https://scholar.google.com/citations?user=Tyah3l8AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer noopener noreferrer" class="team-btn">Homepage</a>
     
   </div>
   
   <div class="col-lg-4 col-md-6 col-sm-10 mb-5 text-center">
-    <img src="/assets/img/team/Jiaxi%20Li.jpeg" alt="Jiaxi Li" class="team-avatar mb-3">
-    <h5 class="team-name mb-1">Jiaxi Li</h5>
+    <img src="/assets/img/team/Shiwen%20Wei.jpg" alt="Shiwen Wei" class="team-avatar mb-3">
+    <h5 class="team-name mb-1">Shiwen Wei</h5>
 
     
     <p class="team-intro">
-      PhD 2024 –<br>
-Co-supervised with <a href="https://scholar.google.com/citations?user=Xmlr1xQAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer noopener noreferrer">Xilu Wang</a>
+      PhD 2026 -
     </p>
     
 
     
-    <a href="https://scholar.google.com/citations?user=RqzHZVIAAAAJ&amp;hl" target="_blank" rel="noopener noreferrer noopener noreferrer" class="team-btn">Homepage</a>
+    <a href="https://scholar.google.com/citations?user=zhor-IIAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer noopener noreferrer" class="team-btn">Homepage</a>
     
   </div>
   
@@ -410,10 +447,43 @@ Co-supervised with <a href="https://scholar.google.com/citations?user=Xmlr1xQAAA
 
 
 
+
+<h2 class="team-section-title">Master Students</h2>
+
+
+
+
+<div class="row justify-content-start mt-3 mb-5">
+
+
+  
+  <div class="col-lg-4 col-md-6 col-sm-10 mb-5 text-center">
+    <img src="/assets/img/team/Jiaqi%20Bu.jpg" alt="Jiaqi Bu" class="team-avatar mb-3">
+    <h5 class="team-name mb-1">Jiaqi Bu</h5>
+
+    
+    <p class="team-intro">
+      MSc 2026 -
+    </p>
+    
+
+    
+  </div>
+  
+</div>
+
+
+
+
+
+
+
 <h2 class="team-section-title">Research Interns</h2>
 
 
-<div class="row justify-content-center mt-3 mb-5">
+
+
+<div class="row justify-content-start mt-3 mb-5">
 
 
   
@@ -432,36 +502,6 @@ Co-supervised with <a href="https://scholar.google.com/citations?user=Xmlr1xQAAA
     
   </div>
   
-  <div class="col-lg-4 col-md-6 col-sm-10 mb-5 text-center">
-    <img src="/assets/img/team/Anonymous.png" alt="Xin Xu" class="team-avatar mb-3">
-    <h5 class="team-name mb-1">Xin Xu</h5>
-
-    
-    <p class="team-intro">
-      PhD candidate at The Hong Kong University of Science and Technology
-    </p>
-    
-
-    
-    <a href="https://xinxu-ustc.github.io/" target="_blank" rel="noopener noreferrer noopener noreferrer" class="team-btn">Homepage</a>
-    
-  </div>
-  
-  <div class="col-lg-4 col-md-6 col-sm-10 mb-5 text-center">
-    <img src="/assets/img/team/Anonymous.png" alt="Tianhao Chen" class="team-avatar mb-3">
-    <h5 class="team-name mb-1">Tianhao Chen</h5>
-
-    
-    <p class="team-intro">
-      PhD candidate at The Hong Kong University of Science and Technology
-    </p>
-    
-
-    
-    <a href="https://openreview.net/profile?id=~Tianhao_Chen3" target="_blank" rel="noopener noreferrer noopener noreferrer" class="team-btn">Homepage</a>
-    
-  </div>
-  
 </div>
 
 
@@ -469,27 +509,36 @@ Co-supervised with <a href="https://scholar.google.com/citations?user=Xmlr1xQAAA
 
 
 
-<h2 class="team-section-title">Visiting Scholars</h2>
+
+<h2 class="team-section-title">Alumni</h2>
 
 
-<div class="row justify-content-start mt-3 mb-5">
-
-
+<ul class="alumni-list mt-3">
   
-  <div class="col-lg-4 col-md-6 col-sm-10 mb-5 text-center">
-    <img src="/assets/img/team/Anonymous.png" alt="Shaojie Zhuang" class="team-avatar mb-3">
-    <h5 class="team-name mb-1">Shaojie Zhuang</h5>
-
+  <li>
     
-    <p class="team-intro">
-      PhD candidate at Shandong University
-    </p>
+    <a href="https://xinxu-ustc.github.io/" target="_blank" rel="noopener noreferrer noopener noreferrer" class="alumni-name">Xin Xu</a>
     
-
-    
-  </div>
+    <span class="alumni-meta">Former Research Intern – now at Tencent Hunyuan</span>
+  </li>
   
-</div>
+  <li>
+    
+    <a href="https://openreview.net/profile?id=~Tianhao_Chen3" target="_blank" rel="noopener noreferrer noopener noreferrer" class="alumni-name">Tianhao Chen</a>
+    
+    <span class="alumni-meta">Former Research Intern – now at TeleAI Foundation Model Team</span>
+  </li>
+  
+  <li>
+    
+    <a href="https://scholar.google.com/citations?user=RqzHZVIAAAAJ&amp;hl" target="_blank" rel="noopener noreferrer noopener noreferrer" class="alumni-name">Jiaxi Li</a>
+    
+    <span class="alumni-meta">Former Research Intern – now at DiDi</span>
+  </li>
+  
+</ul>
+
+
 
 
 
