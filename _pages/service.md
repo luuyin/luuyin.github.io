@@ -14,6 +14,12 @@ nav_order: 4
 - **2017** <span class="gold-award">Best Paper Nomination Award</span>, International Conference on Computer Vision Systems (ICVS 2017)
 {:.entry-list}
 
+<h3 class="section-heading">Funding</h3>
+
+- **2026** <span class="gold-award">Excellent Young Scientists Fund (Overseas)</span>, National Natural Science Foundation of China (NSFC) — 海外优青, PI
+- **2026** Young Scientists Fund (Category C), National Natural Science Foundation of China (NSFC) — 青年科学基金项目（C类）, PI
+{:.entry-list}
+
 <h3 class="section-heading">Invited Talks</h3>
 
 - **2026** Where to Spend Parameters: From Layerwise Efficiency to Federated Architecture Search — Tutorial at CPAL 2026 ([slides](https://drive.google.com/file/d/1bmNPVXY-IgvZjlyOuYZJYKWraREV0t9E/view?usp=sharing))

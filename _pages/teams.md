@@ -14,11 +14,14 @@ group_sections:
   - key: "PhD Students"
     title: "Current PhD Students"
 
+  - key: "Master Students"
+    title: "Master Students"
+
   - key: "Research Intern"
     title: "Research Interns"
 
-  - key: "Visiting Scholar"
-    title: "Visiting Scholars"
+  - key: "Alumni"
+    title: "Alumni"
 
 #=========== 数据区域 ===========#
 members:
@@ -26,7 +29,7 @@ members:
   - name: Lu Yin
     group: "PI"
     avatar: /assets/img/team/Lu Yin.jpg
-    intro: "Assistant Professor"
+    intro: "Professor"
 
   # ===== Current PhD Students =====
   - name: Adarsh Kappiyath
@@ -55,27 +58,23 @@ members:
       Co-supervised with <a href="https://www.surrey.ac.uk/people/ferrante-neri" target="_blank" rel="noopener noreferrer">Ferrante Neri</a>
     link: "https://scholar.google.com/citations?user=5oaBR_0AAAAJ&hl"
 
-  - name: Vishal Thengane
+  - name: Ziyang Chen
     group: "PhD Students"
-    avatar: /assets/img/team/Vishal Thengane.jpg
-    intro: |
-      PhD 2024 –<br/>
-      Co-supervised with <a href="https://x-up-lab.github.io/" target="_blank" rel="noopener noreferrer">Xiatianzhu</a>
-    link: "https://vgthengane.github.io/"
+    avatar: /assets/img/team/Ziyang Chen.jpg
+    intro: "PhD 2026 -"
+    link: "https://scholar.google.com/citations?user=Tyah3l8AAAAJ&hl=en"
 
-  - name: Jiaxi Li
+  - name: Shiwen Wei
     group: "PhD Students"
-    avatar: /assets/img/team/Jiaxi Li.jpeg
-    intro: |
-      PhD 2024 –<br/>
-      Co-supervised with <a href="https://scholar.google.com/citations?user=Xmlr1xQAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Xilu Wang</a>
-    link: "https://scholar.google.com/citations?user=RqzHZVIAAAAJ&hl"
+    avatar: /assets/img/team/Shiwen Wei.jpg
+    intro: "PhD 2026 -"
+    link: "https://scholar.google.com/citations?user=zhor-IIAAAAJ&hl=en"
 
-  # ===== Visiting Scholars =====
-  - name: Shaojie Zhuang
-    group: "Visiting Scholar"
-    avatar: /assets/img/team/Anonymous.png
-    intro: "PhD candidate at Shandong University"
+  # ===== Master Students =====
+  - name: Jiaqi Bu
+    group: "Master Students"
+    avatar: /assets/img/team/Jiaqi Bu.jpg
+    intro: "MSc 2026 -"
     link: ""
 
   # ===== Research Interns =====
@@ -85,17 +84,21 @@ members:
     intro: "PhD candidate at Hong Kong Polytechnic University"
     link: "https://scholar.google.com/citations?user=rUp_4RgAAAAJ&hl=en"
 
+  # ===== Alumni =====
   - name: Xin Xu
-    group: "Research Intern"
-    avatar: /assets/img/team/Anonymous.png
-    intro: "PhD candidate at The Hong Kong University of Science and Technology"
+    group: "Alumni"
+    intro: "Former Research Intern – now at Tencent Hunyuan"
     link: "https://xinxu-ustc.github.io/"
-    
+
   - name: Tianhao Chen
-    group: "Research Intern"
-    avatar: /assets/img/team/Anonymous.png
-    intro: "PhD candidate at The Hong Kong University of Science and Technology"
+    group: "Alumni"
+    intro: "Former Research Intern – now at TeleAI Foundation Model Team"
     link: "https://openreview.net/profile?id=~Tianhao_Chen3"
+
+  - name: Jiaxi Li
+    group: "Alumni"
+    intro: "Former Research Intern – now at DiDi"
+    link: "https://scholar.google.com/citations?user=RqzHZVIAAAAJ&hl"
 ---
 
 <style>
@@ -235,6 +238,39 @@ members:
   box-shadow: 0 0 0 .18rem rgba(21,153,87,.18), 0 10px 22px rgba(0,0,0,.06);
 }
 
+/* ===== Alumni：简约文字列表（不用头像） ===== */
+.team-page .alumni-list{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 3rem;
+}
+.team-page .alumni-list li{
+  padding: .38rem 0;
+}
+
+.team-page .alumni-name{
+  font-family: "Roboto Slab", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.02rem;
+  color: rgba(17,17,17,.84);
+  text-decoration: none;
+}
+.team-page a.alumni-name:hover{ color: var(--accent); }
+
+.team-page .alumni-meta{
+  color: var(--text);
+  font-size: .90rem;
+  margin-left: .45rem;
+}
+
+@media (max-width: 576px){
+  .team-page .alumni-meta{
+    display: block;
+    margin-left: 0;
+    margin-top: .12rem;
+  }
+}
+
 /* 深色系统：只调颜色，风格不变 */
 @media (prefers-color-scheme: dark){
   .team-page{
@@ -243,6 +279,7 @@ members:
     --line: rgba(255,255,255,.12);
   }
   .team-page .team-name{ color: rgba(230,237,243,.88); }
+  .team-page .alumni-name{ color: rgba(230,237,243,.88); }
   .team-page .team-avatar{
     border-color: rgba(255,255,255,.10);
     box-shadow: 0 8px 24px rgba(0,0,0,.35);
@@ -283,6 +320,22 @@ members:
 {% if items.size > 0 %}
 <h2 class="team-section-title">{{ sec.title }}</h2>
 
+{% if sec.key == "Alumni" %}
+<ul class="alumni-list mt-3">
+  {% for p in items %}
+  <li>
+    {% if p.link and p.link != "" %}
+    <a href="{{ p.link }}" target="_blank" rel="noopener noreferrer" class="alumni-name">{{ p.name }}</a>
+    {% else %}
+    <span class="alumni-name">{{ p.name }}</span>
+    {% endif %}
+    {% if p.intro and p.intro != "" %}<span class="alumni-meta">{{ p.intro }}</span>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
+
+{% else %}
+
 {% if items.size == 1 %}
 <div class="row justify-content-start mt-3 mb-5">
 {% else %}
@@ -306,6 +359,7 @@ members:
   </div>
   {% endfor %}
 </div>
+{% endif %}
 
 {% endif %}
 {% endfor %}
